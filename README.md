@@ -1,4 +1,4 @@
-# Cloud-based-Paas---Iot-Management-Deployment
+# Cloud-based-Paas-Iot-Management-Deployment
 
 # Requirements
 docker
