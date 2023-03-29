@@ -32,6 +32,9 @@ Deployment - GCP using terraform
 
 
 # Data from device
+
+Data Stream:
+
 ```json
 {
     "device_id": "507f1f77bcf86cd799439011",
@@ -42,14 +45,33 @@ Deployment - GCP using terraform
 }
 ```
 
+Alert 
+
+```json
+{
+    "device_id": "507f1f77bcf86cd799439011",
+    "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "message": "Gas leakage detected",
+}
+```
+
 # Schema
 
-## Users
+## Platform Questions
+- Is the dashboard going to be hardcoded or configurable by the user
+- Is the data stream going to be configurable (specify schema or hardcode based on our use case)
+- Is the alerts going to be configurable
+- Is the actions going to be configurable
+
+## DB 
+MongoDB using mongoose as ODM
+
+## Users Collection
 
 ```js
 {
-    _id: ObjectId("507f1f77bcf86cd799439011")
-    email: "test@test.io"
+    _id: ObjectId("507f1f77bcf86cd799439011"),
+    email: "test@test.io",
     password: "hf332332A" (Hashed)    
 }
 ```
@@ -58,35 +80,52 @@ Deployment - GCP using terraform
 
 ```js
 {
-    _id: ObjectId("507f1f77bcf86cd799439011")
-    name: "Boiler"
-    type: "Raspberry PI"
+    _id: ObjectId("507f1f77bcf86cd799439011"),
+    name: "Boiler",
+    type: "Raspberry PI",
+    photo: (either cloud storage url or store image in mongo),
     user_id: ObjectId("507f1f77bcf86cd799439011")
 }
 ```
 
-## Data Stream
+## Data Stream collection
+
+Use a consolidated alerts data streams collection for all users?
 
 ```js
 {
-
+    _id: ObjectId("507f1f77bcf86cd799439011"),
+    data: {
+        temperature: 50,
+        humidity: 99
+    }
+    device_id: ObjectId("507f1f77bcf86cd799439011"),
+    user_id: ObjectId("507f1f77bcf86cd799439011"),
+    timestamp: "2023-03-29 13:15:56.811550"
 }
 ```
 
-## Alerts
+## Alerts collection
 
-Use a global consolidated alerts for all users?
+Use a consolidated alerts collection for all users?
 
+```js
+{
+    _id: ObjectId("507f1f77bcf86cd799439011"),
+    message: "Gas leakage",
+    device_id: ObjectId("507f1f77bcf86cd799439011"),
+    user_id: ObjectId("507f1f77bcf86cd799439011"),
+    timestamp: "2023-03-29 13:15:56.811550"
+}
+```
 
 ## Action
 
-```js
-{
-
-}
-```
+Doesn't require a collection ig if we are hardcoding 
 
 ## Dashboard
+
+Will require configuration only if we are not hardcoding
 
 ```js
 {
@@ -97,10 +136,6 @@ Use a global consolidated alerts for all users?
     }
 }
 ```
-
-## Status updates
-
-Use last seen in device collection
 
 # API endpoints
 
@@ -117,9 +152,35 @@ Use last seen in device collection
 - POST /auth/device-token - Generate JWT token for device
 - POST /auth/device-verify - Check if JWT token is valid
 
-
 ## devices
 - GET /devices - Return all devices (filter by user)
 - GET /devices/:id - Return single device details
 - POST /devices - Create new device
 - PUT /devices/:id - Update device details
+- GET /devices/:id/is_active - Check if device has sent data recently
+
+## alerts 
+- GET /alerts - Return all alerts for a user
+
+## data streams
+
+Assuming hardcoding
+
+- GET /data_streams/:id - Return the latest data from a device if available
+
+# Realtime Visualization
+
+- Have some ideas but need to test it 
+- Need to reduce the complexity of the realtime part
+- According to the current design our platform has four realtime pieces: status updates, dashboard, alerts, actions
+
+## Status Updates
+
+To reduce complexity, in the rest api implement an endpoint GET /devices/:id/is_active which will return true if the device has sent data recently in the data streams or alerts topic
+
+## Dashboard
+
+## Alerts
+
+## Actions
+
