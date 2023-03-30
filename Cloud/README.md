@@ -55,6 +55,10 @@ Alert
 }
 ```
 
+Issues:
+- How will a device send both a data stream and an alert (need to use threads or python async)
+- According to my current implementation, a device that only sends an alert will not be be able to send status updates
+
 # Schema
 
 ## Platform Questions
@@ -178,9 +182,23 @@ Assuming hardcoding
 
 To reduce complexity, in the rest api implement an endpoint GET /devices/:id/is_active which will return true if the device has sent data recently in the data streams or alerts topic
 
-## Dashboard
+## Dashboard and Alerts
 
-## Alerts
+Have a very very juggaad solution for sending Dashboard and alerts data in realtime
+
+Code for frontend to connect with websocket server
+```js
+io.on("connection", (socket) => {
+    console.log(socket.id);
+    socket_id = socket.id
+    socket.emit("hello", "world");
+
+    
+});
+```
+
+We could register 
+
 
 ## Actions
 
