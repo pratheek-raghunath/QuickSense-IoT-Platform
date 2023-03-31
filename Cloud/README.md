@@ -202,3 +202,77 @@ We could register
 
 ## Actions
 
+# Cloud Deployment Notes
+
+[GCP Deploy Flask](https://cloud.google.com/docs/terraform/get-started-with-terraform)
+
+[GCP Free Tier Compute Engine with docker and docker-compose](https://github.com/Joeharrison94/terraform-gcp-ubuntu-container-ready-e2-micro-vm)
+
+## Fix the compute engine setup
+
+- reserved ip address
+- ports - 22, 1883, 27017, 80, 443 (be careful about mongo, add username and pass)
+- docker, docker-compose install
+- clone private repo
+
+## Update setup
+
+- pull latest repo
+- restart containers
+
+## gcloud 
+
+```sh
+gcloud init
+gcloud auth application-default login
+```
+
+## Terraform
+
+```sh
+#Initialize terraform
+terraform init
+
+#Build Infrastructure
+terraform apply
+
+#Destroy Infrastrucutre
+terraform destroy
+```
+
+## Reserving IP address
+
+IP Address - 34.122.170.116
+
+```sh
+gcloud compute addresses create cloud-based-iot-deployment  \
+    --region=us-central1
+
+gcloud compute addresses describe cloud-based-iot-deployment --region=us-central1
+```
+
+## ssh
+
+```sh
+gcloud compute ssh --zone "us-central1-c" "cloud-based-iot-deployment"  --project "cloud-based-iot-deployment"
+```
+
+### http server for testing
+
+```sh
+sudo apt update && sudo apt -y install apache2
+sudo systemctl status apache2
+echo '<!doctype html><html><body><h1>Hello World!</h1></body></html>' | sudo tee /var/www/html/index.html
+```
+
+### Name.com DNS config
+
+www - A record
+rest all subdomains cname to www
+
+dns lookup check - https://www.whatsmydns.net/
+
+### Broker testing
+
+mosquitto_pub -h broker.orensaldanha.live -t 'test/topic' -m 'helloWorld'
+mosquitto_sub -h broker.orensaldanha.live -t 'test/topic' -m 'helloWorld'
