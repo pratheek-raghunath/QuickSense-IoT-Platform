@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-sensor = 16
+sensor = 13
 buzzer = 18
 
 GPIO.setmode(GPIO.BOARD)

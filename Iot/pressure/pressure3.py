@@ -6,7 +6,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 #Set Pin 4 to be our Sniffer Pin, We want this to be an Input so we set it as such
-GPIO.setup(4,GPIO.IN)
+GPIO.setup(10,GPIO.IN)
 
 #This variable will be used to determine if pressure is being applied or not
 prev_input = 0
@@ -15,7 +15,7 @@ prev_input = 0
 while True:
 
     #take a reading from the pressure pad (based on the voltage able to get to pin 4)
-    input = GPIO.input(4)
+    input = GPIO.input(10)
 
     #if the last reading was low and this one high the pressure pad is being pressed!
     if ((not prev_input) and input):

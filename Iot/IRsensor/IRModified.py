@@ -13,7 +13,7 @@ client.connect('broker.orensaldanha.live', 1883)
 client.loop_start()
 
 
-sensor = 16
+sensor = 13
 buzzer = 18
 
 GPIO.setmode(GPIO.BOARD)
