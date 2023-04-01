@@ -1,6 +1,4 @@
-# sudo apt-get update
-# sudo apt-get install -y mosquitto
-# echo "allow_anonymous true" >> /etc/mosquitto/mosquitto.conf
+sudo apt-get update
 
 #Install docker and docker-compose
 # Install Docker
@@ -31,10 +29,19 @@ sudo ln -s /opt/nodejs/bin/npm /usr/bin/npm
 
 #Clone repo
 #git clone https://orensaldanha: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@github.com/orensaldanha/cloud-temp
-git clone https://pratheek-raghunath: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@github.com/pratheek-raghunath/Cloud-based-Paas-Iot-Management-Deployment
-git config --global --add safe.directory /Cloud-based-Paas-Iot-Management-Deployment
+sudo git clone https://pratheek-raghunath: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@github.com/pratheek-raghunath/Cloud-based-Paas-Iot-Management-Deployment
+sudo git config --global --add safe.directory /Cloud-based-Paas-Iot-Management-Deployment
 
-cd /Cloud-based-Paas-Iot-Management-Deployment/Cloud
+sudo cd /Cloud-based-Paas-Iot-Management-Deployment/Cloud
 sudo npm install
 
-sudo docker-compose up -d
+#Prepare docker containers
+sudo cp package.json worker.js schema.js worker
+sudo cp package.json wss.js schema.js wss
+sudo cp package.json api.js schema.js api
+
+sudo docker-compose -f docker-compose.prod.yaml up -d
+
+#Copy update script to root
+sudo cp /Cloud-based-Paas-Iot-Management-Deployment/Cloud/terraform/update.sh /update.sh
+sudo chmod a+x /update.sh
