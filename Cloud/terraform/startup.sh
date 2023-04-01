@@ -1,4 +1,4 @@
-sudo apt-get update
+sudo apt-get update -y
 
 #Install docker and docker-compose
 # Install Docker
