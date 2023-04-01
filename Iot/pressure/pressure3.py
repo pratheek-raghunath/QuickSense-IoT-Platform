@@ -42,7 +42,8 @@ while True:
         print(data)
         (rc, mid) = client.publish('/pressure', json.dumps(data), qos=1)
         time.sleep(1)
-        prev_input = input
+    prev_input = input
+#	time.sleep(0.10)
     #update previous input so we can avoid spamming the Shell with messages, 
     #this section of the script is also a perfect place to add threshold values to active other devices 
     
