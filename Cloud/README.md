@@ -280,3 +280,9 @@ mosquitto_sub -h broker.orensaldanha.live -t '/temp'
 ### nginx setup
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
 
+### gcp ssh
+
+```sh
+gcloud compute ssh --zone "us-central1-c" "cloud-based-iot-deployment"  --project "cloud-based-iot-deployment"
+```
+
