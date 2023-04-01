@@ -1,6 +1,16 @@
 #Start by importing all necessary libraries and packages 
 import RPi.GPIO as GPIO
+import paho.mqtt.client as paho
+import datetime
 import time
+import json
+import pytz
+
+IST = pytz.timezone('Asia/Kolkata')
+
+client = paho.Client()
+client.connect('broker.orensaldanha.live', 1883)
+client.loop_start()
 
 #Set the GPIO to BCM Mode
 GPIO.setmode(GPIO.BCM)
@@ -23,9 +33,19 @@ while True:
     #Print that fact to the shell, RIP David Bowie
         print("Under Pressure")
 
+        data = {
+            "sensor": "Pressure",
+            "message": "Under Pressure",
+            "timestamp": str(datetime.datetime.now(IST))
+          }
+
+        print(data)
+        (rc, mid) = client.publish('/pressure', json.dumps(data), qos=1)
+        time.sleep(1)
+        prev_input = input
     #update previous input so we can avoid spamming the Shell with messages, 
     #this section of the script is also a perfect place to add threshold values to active other devices 
-    prev_input = input
+    
 
     #Have a slight pause here, also to avoid spamming the shell with data
-    time.sleep(0.10)
+    
