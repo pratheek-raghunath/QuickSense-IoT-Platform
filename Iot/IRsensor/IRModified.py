@@ -34,7 +34,7 @@ try:
             "sensor": "IR",
             "message": "Object Detetceted",
             "timestamp": str(datetime.datetime.now(IST))
-        }
+          }
 
           print(data)
           (rc, mid) = client.publish('/ir', json.dumps(data), qos=1)
