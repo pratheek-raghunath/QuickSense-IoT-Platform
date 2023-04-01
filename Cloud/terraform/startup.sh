@@ -37,4 +37,11 @@ git config --global --add safe.directory /Cloud-based-Paas-Iot-Management-Deploy
 cd /Cloud-based-Paas-Iot-Management-Deployment/Cloud
 sudo npm install
 
+#Prepare docker containers
+cp package.json worker.js schema.js worker
+
 sudo docker-compose up -d
+
+#Copy update script to root
+cp /Cloud-based-Paas-Iot-Management-Deployment/Cloud/terraform/update.sh /update.sh
+sudo chmod a+x /update.sh

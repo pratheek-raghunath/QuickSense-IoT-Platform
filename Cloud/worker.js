@@ -3,30 +3,7 @@ const axios = require('axios')
 
 const client = mqtt.connect('mqtt://localhost:1883')
 
-// Import the mongoose module
-const mongoose = require("mongoose");
-mongoose.set('strictQuery', false);
-const mongoDB = "mongodb://localhost:27017/cloud-iot-paas";
-
-//check MongoDb connection
-try {
-    mongoose.connect(mongoDB)
-    console.log("Connected to MongoDB")
-} catch {
-    console.log("Error connecting to MongoDB")
-    process.exit()
-}
-
-// Define a schema
-const Schema = mongoose.Schema;
-
-const temperatureSchema = new Schema({
-  temperature: Number,
-  timestamp: Date,
-});
-
-const TemperatureModel = mongoose.model("Temperature", temperatureSchema);
-
+const {TemperatureModel} = require("./schema")
 
 client.on("connect", () => {
     client.subscribe('#')

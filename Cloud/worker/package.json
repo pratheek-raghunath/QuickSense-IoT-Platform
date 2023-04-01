@@ -1,0 +1,23 @@
+{
+    "name": "cloud-iot-paas",
+    "version": "1.0.0",
+    "description": "cloud-iot-paas",
+    "main": "",
+    "scripts": {
+        "api": "nodemon api.js",
+        "worker": "nodemon worker.js",
+        "wss": "nodemon wss.js",
+        "wss-client": "nodemon wss_client.js"
+    },
+    "dependencies": {
+        "axios": "^1.2.0",
+        "moment": "^2.29.4",
+        "mongoose": "^6.9.0",
+        "mqtt": "^4.3.7",
+        "socket.io": "^4.6.1",
+        "socket.io-client": "^4.6.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
+}
