@@ -44,20 +44,20 @@ def MPU_Init():
 
 def read_raw_data(addr):
 	#Accelero and Gyro value are 16-bit
-        high = bus.read_byte_data(Device_Address, addr)
-        low = bus.read_byte_data(Device_Address, addr+1)
-    
-        #concatenate higher and lower value
-        value = ((high << 8) | low)
-        
-        #to get signed value from mpu6050
-        if(value > 32768):
-                value = value - 65536
-        return value
+	high = bus.read_byte_data(Device_Address, addr)
+	low = bus.read_byte_data(Device_Address, addr+1)
+
+	#concatenate higher and lower value
+	value = ((high << 8) | low)
+	
+	#to get signed value from mpu6050
+	if(value > 32768):
+			value = value - 65536
+	return value
 
 
 bus = smbus.SMBus(1) 	# or bus = smbus.SMBus(0) for older version boards
-sleep(1)
+time.sleep(1)
 Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
@@ -87,17 +87,17 @@ while True:
 	
 
 	print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
-        data = {
-            "sensor": "accelerometer",
-            "Gx": Gx,
-            "Gy": Gy,
-            "Gz": Gz,
-            "Ax": Ax,
-            "Ay": Ay,
-            "Az": Az,
-            "timestamp": str(datetime.datetime.now(IST))
-          }
+	data = {
+		"sensor": "accelerometer",
+		"Gx": Gx,
+		"Gy": Gy,
+		"Gz": Gz,
+		"Ax": Ax,
+		"Ay": Ay,
+		"Az": Az,
+		"timestamp": str(datetime.datetime.now(IST))
+		}
 
-        print(data)
-        (rc, mid) = client.publish('/ultrasonic', json.dumps(data), qos=1)
-        sleep(1)	
+	print(data)
+	(rc, mid) = client.publish('/ultrasonic', json.dumps(data), qos=1)
+	time.sleep(1)	
