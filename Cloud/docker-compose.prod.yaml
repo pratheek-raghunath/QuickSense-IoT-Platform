@@ -1,0 +1,78 @@
+version: "3.9"
+services:
+  cloud-iot-paas-broker:
+    image: "eclipse-mosquitto:2.0.15"
+    networks:
+      - cloud-iot-paas
+    volumes:
+      - ./broker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    ports:
+      - "1883:1883"
+      
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - cloud-iot-paas
+    volumes:
+      - mongodb-data:/data/db
+
+  worker:
+    build:
+      context: ./worker
+    environment:
+      - ENVIRONMENT=prod
+    depends_on:
+      - cloud-iot-paas-broker
+      - mongo
+    networks:
+      - cloud-iot-paas
+
+  wss:
+    build:
+      context: ./wss
+    environment:
+      - ENVIRONMENT=prod
+    depends_on:
+      - cloud-iot-paas-broker
+      - mongo
+    ports:
+      - "3000:3000"
+    networks:
+      - cloud-iot-paas
+
+  api:
+    build:
+      context: ./api
+    environment:
+      - ENVIRONMENT=prod
+    depends_on:
+      - mongo
+    ports:
+      - "3002:3002"
+    networks:
+      - cloud-iot-paas
+
+  web-gui:
+    build:
+      context: ./web-gui
+    environment:
+      - ENVIRONMENT=prod
+    depends_on:
+      - api
+      - wss
+    ports:
+      - "3006:3006"
+    networks:
+      - cloud-iot-paas
+
+volumes:
+  mongodb-data:
+
+networks:
+  cloud-iot-paas:

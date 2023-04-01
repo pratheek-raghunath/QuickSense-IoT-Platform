@@ -7,4 +7,4 @@ COPY . .
 
 RUN npm install
 
-CMD [ "node", "worker.js" ]
+CMD [ "node", "api.js" ]
