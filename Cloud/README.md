@@ -276,3 +276,7 @@ dns lookup check - https://www.whatsmydns.net/
 
 mosquitto_pub -h broker.orensaldanha.live -t 'test/topic' -m 'helloWorld'
 mosquitto_sub -h broker.orensaldanha.live -t 'test/topic' -m 'helloWorld'
+
+### nginx setup
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
+
