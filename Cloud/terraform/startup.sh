@@ -13,13 +13,13 @@ sudo curl -L https://github.com/docker/compose/releases/download/v2.17.2/docker-
 sudo chmod +x /bin/docker-compose
 
 #Install and setup nginx
-sudo apt install nginx
+sudo apt install nginx -y
 sudo ufw allow 'Nginx HTTP'
 sudo mv /Cloud-based-Paas-Iot-Management-Deployment/Cloud/terraform/orensaldanha.live /etc/nginx/sites-enabled/orensaldanha.live
 sudo systemctl restart nginx 
 
 #Install pip
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 
 # Install nodejs
 sudo mkdir /opt/nodejs

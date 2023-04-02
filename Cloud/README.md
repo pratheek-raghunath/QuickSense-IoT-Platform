@@ -286,3 +286,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-
 gcloud compute ssh --zone "us-central1-c" "cloud-based-iot-deployment"  --project "cloud-based-iot-deployment"
 ```
 
+### compute engine startup script
+
+```sh
+sudo journalctl -u google-startup-scripts.service
+sudo google_metadata_script_runner startup
+```
+
