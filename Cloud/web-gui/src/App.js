@@ -18,13 +18,11 @@ function App() {
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [temperatureData, setTemperatureData] = useState([]);
 
-  const temp = temperatureData.map(data => data.temperature)
-  const timestamp = temperatureData.map(data => data.timestamp)
-
+  // move this to a Utility function
   const modifiedTemp = temperatureData.map(cur => {
     return {
       temperature: cur.temperature, 
-      timestamp: new Date(cur.timestamp).toLocaleTimeString()
+      timestamp: new Date(cur.timestamp)
     }
   }
   )
@@ -41,17 +39,27 @@ function App() {
     }
 
     function onTemperatureData(value) {
-      setTemperatureData(previous => [...previous, JSON.parse(value)]);
+      let data = JSON.parse(value)
+      console.log(data)
+      setTemperatureData(previous => [...previous, {
+        temperature: data.data.temperature,
+        timestamp: data.timestamp
+      }]);
+    }
+
+    function onAlert(value) {
+      console.log(value)
     }
 
     socket.on('connect', onConnect);
     socket.on('disconnect', onDisconnect);
     socket.on('temperature', onTemperatureData);
+    socket.on('alert', onAlert);
 
     return () => {
       socket.off('connect', onConnect);
       socket.off('disconnect', onDisconnect);
-      socket.off('foo', onTemperatureData);
+      socket.off('temperature', onTemperatureData);
     };
   }, []);
 
@@ -65,7 +73,7 @@ function App() {
             left: 20,
             bottom: 5,
           }}>
-        <XAxis dataKey="timestamp" label='time'  tickFormatter = {(unixTime) => moment(unixTime).format('HH:mm')} />
+        <XAxis dataKey="timestamp" label='time'  tickFormatter = {(timestamp) => moment(timestamp).format('HH:mm')} />
         <YAxis />
         <Tooltip />
         <Legend/>

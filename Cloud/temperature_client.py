@@ -13,8 +13,10 @@ client.loop_start()
 
 while True:
     data = {
-        "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
-        
+        "sensor": "temp",
+        "data": {
+            "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
+        },
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
