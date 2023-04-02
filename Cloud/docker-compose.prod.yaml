@@ -22,16 +22,16 @@ services:
     volumes:
       - mongodb-data:/data/db
 
-  worker:
-    build:
-      context: ./worker
-    environment:
-      - ENVIRONMENT=prod
-    depends_on:
-      - cloud-iot-paas-broker
-      - mongo
-    networks:
-      - cloud-iot-paas
+  # worker:
+  #   build:
+  #     context: ./worker
+  #   environment:
+  #     - ENVIRONMENT=prod
+  #   depends_on:
+  #     - cloud-iot-paas-broker
+  #     - mongo
+  #   networks:
+  #     - cloud-iot-paas
 
   wss:
     build:
