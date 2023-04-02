@@ -39,12 +39,12 @@ const DataStreamModel = mongoose.model("DataStream", dataStreamSchema);
 
 const alertSchema = new Schema({
     sensor: String,
-    data: Object,
+    message: String,
     timestamp: Date,
 })
 
-const alertModel = mongoose.model("DataStream", alertSchema);
+const AlertModel = mongoose.model("Alert", alertSchema);
 
 module.exports = {
-    TemperatureModel, DataStreamModel
+    TemperatureModel, DataStreamModel, AlertModel
 }

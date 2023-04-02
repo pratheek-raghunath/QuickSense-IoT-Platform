@@ -1,6 +1,6 @@
 const mqtt = require('mqtt')
 const axios = require('axios')
-const { TemperatureModel, DataStreamModel } = require("./schema")
+const { TemperatureModel, DataStreamModel, AlertModel } = require("./schema")
 
 
 let client;
@@ -17,7 +17,7 @@ client.on("connect", () => {
 })
 
 client.on('message', (topic, message) => {
-    //console.log(topic, JSON.parse(message))
+    console.log(topic, JSON.parse(message))
     // Store data in MongoDB
     data = JSON.parse(message)
 
@@ -29,7 +29,12 @@ client.on('message', (topic, message) => {
                 console.log(err);
         });
     } else if(topic.includes("alert")) {
-        console.log("write alert")
+        alert_instance = new AlertModel(data)
+
+        alert_instance.save((err) => {
+            if (err)
+                console.log(err);
+        });
     } else {
         //store data stream
         data_stream_instance = new DataStreamModel(data)
