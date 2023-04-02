@@ -29,6 +29,22 @@ const temperatureSchema = new Schema({
 
 const TemperatureModel = mongoose.model("Temperature", temperatureSchema);
 
+const dataStreamSchema = new Schema({
+    sensor: String,
+    data: Object,
+    timestamp: Date,
+})
+
+const DataStreamModel = mongoose.model("DataStream", dataStreamSchema);
+
+const alertSchema = new Schema({
+    sensor: String,
+    data: Object,
+    timestamp: Date,
+})
+
+const alertModel = mongoose.model("DataStream", alertSchema);
+
 module.exports = {
-    temperatureSchema, TemperatureModel
+    TemperatureModel, DataStreamModel
 }

@@ -2,8 +2,6 @@ version: "3.9"
 services:
   cloud-iot-paas-broker:
     image: "eclipse-mosquitto:2.0.15"
-    networks:
-      - cloud-iot-paas
     volumes:
       - ./broker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
     ports:
@@ -17,8 +15,6 @@ services:
     # environment:
     #   MONGO_INITDB_ROOT_USERNAME: root
     #   MONGO_INITDB_ROOT_PASSWORD: example
-    networks:
-      - cloud-iot-paas
     volumes:
       - mongodb-data:/data/db
       

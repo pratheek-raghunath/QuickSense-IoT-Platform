@@ -1,5 +1,7 @@
 const mqtt = require('mqtt')
 const axios = require('axios')
+const { TemperatureModel, DataStreamModel } = require("./schema")
+
 
 let client;
 
@@ -9,20 +11,32 @@ if(process.env.ENVIRONMENT == "prod") {
     client = mqtt.connect('mqtt://localhost:1883')
 }
 
-const {TemperatureModel} = require("./schema")
 
 client.on("connect", () => {
     client.subscribe('#')
 })
 
 client.on('message', (topic, message) => {
-    console.log(topic, JSON.parse(message))
+    //console.log(topic, JSON.parse(message))
     // Store data in MongoDB
-    temperature_data = JSON.parse(message)
-    const temperature_instance = new TemperatureModel(temperature_data);
+    data = JSON.parse(message)
 
-    temperature_instance.save((err) => {
-        if (err)
-            console.log(err);
-    });
+    if (topic == "/temp") {
+        const temperature_instance = new TemperatureModel(data);
+
+        temperature_instance.save((err) => {
+            if (err)
+                console.log(err);
+        });
+    } else if(topic.includes("alert")) {
+        console.log("write alert")
+    } else {
+        //store data stream
+        data_stream_instance = new DataStreamModel(data)
+
+        data_stream_instance.save((err) => {
+            if (err)
+                console.log(err);
+        });
+    }
 });

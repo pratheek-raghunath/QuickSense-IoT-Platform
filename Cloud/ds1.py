@@ -13,9 +13,12 @@ client.loop_start()
 
 while True:
     data = {
-        "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
+        "sensor": "ds1",
+        "data": {
+            "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
+        },
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
-    (rc, mid) = client.publish('/temp', json.dumps(data), qos=1)
+    (rc, mid) = client.publish('/ds1', json.dumps(data), qos=1)
     time.sleep(1)

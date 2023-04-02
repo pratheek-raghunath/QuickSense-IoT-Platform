@@ -11,11 +11,14 @@ client = paho.Client()
 client.connect('localhost', 1883)
 client.loop_start()
 
+counter = 0
+
 while True:
     data = {
-        "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
+        "sensor": "alert1",
+        "message": "alert",
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
-    (rc, mid) = client.publish('/temp', json.dumps(data), qos=1)
-    time.sleep(1)
+    (rc, mid) = client.publish('/alert/alert1', json.dumps(data), qos=1)
+    time.sleep(3)
