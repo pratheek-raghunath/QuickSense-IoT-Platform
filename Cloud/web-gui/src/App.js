@@ -5,6 +5,7 @@ import { io } from 'socket.io-client';
 import socketContext from "./context/socket"
 
 import Visualization from './components/Visualization';
+import Alert from './components/Alert';
 
 const socket = io("http://wss.orensaldanha.live");
 
@@ -33,6 +34,7 @@ function App() {
     <socketContext.Provider value={socket}>
        <div className="App" style={{width:'800px', height:'800px'}}>
         <Visualization/>
+        <Alert/>
         {/* <Alert />
         <Action /> */}
       </div>

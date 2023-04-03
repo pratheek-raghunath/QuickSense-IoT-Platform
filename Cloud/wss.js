@@ -51,7 +51,7 @@ client.on('message', (topic, message) => {
     data = JSON.parse(message)
 
     if(topic.includes("alert")) {
-        io.emit("alert", data)
+        io.emit("alert", JSON.stringify(data))
         alert_instance = new AlertModel(data)
 
         alert_instance.save((err) => {

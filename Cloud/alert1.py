@@ -8,7 +8,7 @@ import pytz
 IST = pytz.timezone('Asia/Kolkata')
 
 client = paho.Client()
-client.connect('localhost', 1883)
+client.connect('broker.orensaldanha.live', 1883)
 client.loop_start()
 
 counter = 0
