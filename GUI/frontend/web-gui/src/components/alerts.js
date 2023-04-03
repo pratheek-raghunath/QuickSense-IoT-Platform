@@ -10,7 +10,7 @@ function Alerts() {
     },
     {
       sensor: "alert2",
-      message: "alert",
+      message: "alertttt",
       timestamp: "2023-05-04",
     },
   ];
