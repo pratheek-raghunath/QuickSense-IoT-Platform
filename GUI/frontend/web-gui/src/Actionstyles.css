@@ -1,0 +1,12 @@
+.container {
+  text-align: center;
+}
+
+#btn {
+  margin-left: 121px;
+  margin-top: 55px;
+  width: 84px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+}
