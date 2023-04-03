@@ -40,7 +40,7 @@ while True:
           }
 
         print(data)
-        (rc, mid) = client.publish('/pressure', json.dumps(data), qos=1)
+        (rc, mid) = client.publish('/alert/pressure', json.dumps(data), qos=1)
         time.sleep(1)
     prev_input = input
 #	time.sleep(0.10)

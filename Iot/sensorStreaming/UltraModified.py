@@ -47,7 +47,9 @@ try:
       print("Distance:",distance,"cm")
       data = {
             "sensor": "Ultrasonic",
-            "distance": distance,
+            "data": {
+                  "distance": distance,
+            },
             "timestamp": str(datetime.datetime.now(IST))
           }
 
