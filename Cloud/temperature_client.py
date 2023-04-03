@@ -13,7 +13,7 @@ client.loop_start()
 
 while True:
     data = {
-        "sensor": "temperature",
+        "sensor": "temperature_sensor",
         "data": {
             "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
         },

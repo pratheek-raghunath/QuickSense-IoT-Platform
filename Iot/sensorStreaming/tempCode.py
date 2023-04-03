@@ -16,7 +16,7 @@ client.loop_start()
 while True:
 	humidity,temperature = Adafruit_DHT.read_retry(11,4)
 	data = {
-		"device" : "temperture_sensor",
+		"device" : "temperature_sensor",
 		"data": {
 			"temperature": temperature,
 			"humidty": humidity,
