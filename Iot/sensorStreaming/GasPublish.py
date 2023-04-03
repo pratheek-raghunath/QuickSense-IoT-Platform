@@ -23,6 +23,7 @@ if __name__ == '__main__':
             time.sleep(5)
             value = line.split(":")[1].split("|")[0].strip()
             msg = line.split(":")[1].split("|")[1].strip()
+
             print(line)
             data = {
             "sensor": "Gas",
