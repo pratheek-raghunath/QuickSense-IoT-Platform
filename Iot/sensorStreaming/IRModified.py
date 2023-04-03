@@ -32,12 +32,12 @@ try:
           print("Object Detected")
           data = {
             "sensor": "IR",
-            "message": "Object Detetceted",
+            "message": "Object Detected",
             "timestamp": str(datetime.datetime.now(IST))
           }
 
           print(data)
-          (rc, mid) = client.publish('/ir', json.dumps(data), qos=1)
+          (rc, mid) = client.publish('/alert/ir', json.dumps(data), qos=1)
           time.sleep(1)
           while GPIO.input(sensor):
               time.sleep(0.2)

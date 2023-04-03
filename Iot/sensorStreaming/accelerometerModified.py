@@ -89,12 +89,14 @@ while True:
 	print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
 	data = {
 		"sensor": "accelerometer",
-		"Gx": Gx,
-		"Gy": Gy,
-		"Gz": Gz,
-		"Ax": Ax,
-		"Ay": Ay,
-		"Az": Az,
+		"data": {
+			"Gx": Gx,
+			"Gy": Gy,
+			"Gz": Gz,
+			"Ax": Ax,
+			"Ay": Ay,
+			"Az": Az,
+		},
 		"timestamp": str(datetime.datetime.now(IST))
 		}
 
