@@ -20,8 +20,10 @@ if __name__ == '__main__':
     while True:
         if ser.in_waiting > 0:
             line = ser.readline().decode('utf-8').rstrip()
+            time.sleep(5)
             value = line.split(":")[1].split("|")[0].strip()
             msg = line.split(":")[1].split("|")[1].strip()
+
             print(line)
             data = {
             "sensor": "Gas",
