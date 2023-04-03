@@ -6,8 +6,10 @@ import socketContext from "./context/socket"
 
 import Visualization from './components/Visualization';
 import Alert from './components/Alert';
+import Action from "./components/Action"
 
 const socket = io("http://wss.orensaldanha.live");
+//const socket = io("http://localhost:3000");
 
 function App() {
 
@@ -33,10 +35,9 @@ function App() {
   return (
     <socketContext.Provider value={socket}>
        <div className="App" style={{width:'800px', height:'800px'}}>
+        <Action/>
         <Visualization/>
         <Alert/>
-        {/* <Alert />
-        <Action /> */}
       </div>
     </socketContext.Provider>
   );
