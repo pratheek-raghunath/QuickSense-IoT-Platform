@@ -292,4 +292,3 @@ gcloud compute ssh --zone "us-central1-c" "cloud-based-iot-deployment"  --projec
 sudo journalctl -u google-startup-scripts.service
 sudo google_metadata_script_runner startup
 ```
-
