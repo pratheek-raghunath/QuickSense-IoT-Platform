@@ -15,10 +15,7 @@ const Temperature = () => {
         timestamp: new Date(cur.timestamp)
       }
     }
-    )
-
-    console.log(modifiedTemp)
-  
+    )  
   
     useEffect(() => {
       function onTemperatureData(value) {
