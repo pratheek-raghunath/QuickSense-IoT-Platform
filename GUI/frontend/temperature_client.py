@@ -8,17 +8,14 @@ import pytz
 IST = pytz.timezone('Asia/Kolkata')
 
 client = paho.Client()
-client.connect('broker.orensaldanha.live', 1883)
+client.connect('localhost', 1883)
 client.loop_start()
-
-counter = 0
 
 while True:
     data = {
-        "sensor": "alert1",
-        "message": "alert",
+        "temperature": psutil.sensors_temperatures()['dell_smm'][0].current,
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
-    (rc, mid) = client.publish('/alert/alert1', json.dumps(data), qos=1)
-    time.sleep(3)
+    (rc, mid) = client.publish('/temp', json.dumps(data), qos=1)
+    time.sleep(1)

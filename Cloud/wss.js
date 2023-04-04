@@ -2,6 +2,19 @@ const { Server } = require("socket.io");
 const mqtt = require('mqtt')
 const { TemperatureModel, DataStreamModel, AlertModel } = require("./schema")
 
+// broker ocnfig
+let client;
+
+if(process.env.ENVIRONMENT == "prod") {
+    client = mqtt.connect('mqtt://cloud-iot-paas-broker:1883')
+} else {
+    client = mqtt.connect('mqtt://localhost:1883')
+}
+
+client.on("connect", () => {
+    client.subscribe('#')
+})
+
 // web socket server logic
 
 const io = new Server(3000, 
@@ -19,6 +32,16 @@ io.on("connection", (socket) => {
   socket.emit("hello", "world");
 });
 
+io.on("buzzer", (socket) => {
+    console.log(socket.message)
+    client.publish("buzzer", 'toggle', { qos: 0, retain: false }, (error) => {
+        if (error) {
+          console.error(error)
+        }
+      })
+})
+
+
 // pushData();
 
 // async function pushData() {
@@ -33,25 +56,13 @@ io.on("connection", (socket) => {
 
 // worker node logic
 
-let client;
-
-if(process.env.ENVIRONMENT == "prod") {
-    client = mqtt.connect('mqtt://cloud-iot-paas-broker:1883')
-} else {
-    client = mqtt.connect('mqtt://localhost:1883')
-}
-
-client.on("connect", () => {
-    client.subscribe('#')
-})
-
 client.on('message', (topic, message) => {
     //console.log(topic, JSON.parse(message))
     // Store data in MongoDB
     data = JSON.parse(message)
 
     if(topic.includes("alert")) {
-        io.emit("alert", data)
+        io.emit("alert", JSON.stringify(data))
         alert_instance = new AlertModel(data)
 
         alert_instance.save((err) => {

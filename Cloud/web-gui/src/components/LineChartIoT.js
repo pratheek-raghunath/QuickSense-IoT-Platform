@@ -10,10 +10,6 @@ import {
 } from 'recharts';
 
 const LineChartIoT = ({ data, yaxis}) => {  
-
-  console.log(data)
-  console.log(yaxis)
-
     
     return (
         <LineChart width={500} height={300} data={data} margin={{

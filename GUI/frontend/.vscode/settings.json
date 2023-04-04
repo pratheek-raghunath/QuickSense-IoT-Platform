@@ -1,0 +1,53 @@
+{
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "Temperature Client",
+          "commands": ["python3 temperature_client.py"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "API",
+          "commands": ["npm run api"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "worker",
+          "commands": ["npm run worker"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "wss",
+          "commands": ["npm run wss"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "wss-client",
+          "commands": ["npm run wss-client"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "web gui",
+          "commands": ["cd web-gui","npm run start"]
+        }
+      ]
+    }
+    
+  ]
+}
