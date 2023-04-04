@@ -46,7 +46,6 @@ io.on("connection", (socket) => {
     })
 
     socket.on("servo", () => {
-        console.log("buzzer")
         data = {
                 action:"toggle"
         }
@@ -81,7 +80,7 @@ client.on('message', (topic, message) => {
     // Store data in MongoDB
     data = JSON.parse(message)
 
-    if (topic == "buzzer") {
+    if (topic == "buzzer" || topic == "servo") {
         //ignore
     }
     else if(topic.includes("alert")) {
