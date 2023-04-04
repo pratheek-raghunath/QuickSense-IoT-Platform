@@ -42,7 +42,9 @@ const Accelerometer = () => {
 
   return (
     <div>
-      <h1>Accelerometer in real time</h1>
+      <h1 className="font-semibold text-gray-800">
+        Accelerometer in real time
+      </h1>
       <LineChartIoT {...config} />
     </div>
   );

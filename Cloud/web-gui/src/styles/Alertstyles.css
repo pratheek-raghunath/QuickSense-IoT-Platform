@@ -1,0 +1,26 @@
+li {
+  animation: change 5s step-end both;
+}
+
+@keyframes change {
+  from {
+    color: red;
+  }
+  to {
+    color: green;
+  }
+}
+
+#alert {
+  animation: changealert 5s infinite;
+  animation-delay: 0s;
+}
+
+@keyframes changealert {
+  from {
+    color: red;
+  }
+  to {
+    color: black;
+  }
+}
