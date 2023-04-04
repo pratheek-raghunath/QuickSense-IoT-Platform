@@ -33,17 +33,33 @@ io.on("connection", (socket) => {
   console.log(socket.id);
   socket_id = socket.id
   socket.emit("hello", "world");
-});
 
-io.on("buzzer", (socket) => {
-    console.log("buzzer")
-    console.log(socket)
-    client.publish("buzzer", 'toggle', { qos: 0, retain: false }, (error) => {
+  socket.on("buzzer", () => {
+    data = {
+            action:"toggle"
+    }
+    client.publish("/buzzer", JSON.stringify(data), { qos: 0, retain: false }, (error) => {
         if (error) {
           console.error(error)
         }
       })
-})
+    })
+
+    socket.on("servo", () => {
+        console.log("buzzer")
+        data = {
+                action:"toggle"
+        }
+        client.publish("/servo", JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+            if (error) {
+              console.error(error)
+            }
+          })
+        })
+});
+
+
+
 
 
 // pushData();
@@ -65,7 +81,10 @@ client.on('message', (topic, message) => {
     // Store data in MongoDB
     data = JSON.parse(message)
 
-    if(topic.includes("alert")) {
+    if (topic == "buzzer") {
+        //ignore
+    }
+    else if(topic.includes("alert")) {
         io.emit("alert", JSON.stringify(data))
         alert_instance = new AlertModel(data)
 
