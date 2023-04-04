@@ -2,53 +2,51 @@ import {useState, useEffect, useContext} from 'react';
 import socketContext from '../../context/socket';
 import LineChartIoT from '../LineChartIoT';
 
-const Temperature = () => {
+const Ultrasonic = () => {
 
     const socket = useContext(socketContext)
 
-    const [temperatureData, setTemperatureData] = useState([]);
+    const [ultrasonicData, setUltrasonicData] = useState([]);
   
     // move this to a Utility function
-    const modifiedTemp = temperatureData.map(cur => {
+    const modifiedUltrasonic = ultrasonicData.map(cur => {
       return {
-        temperature: cur.temperature, 
+        distance: cur.distance, 
         timestamp: new Date(cur.timestamp)
       }
     }
     )
-
-    console.log(modifiedTemp)
   
   
     useEffect(() => {
-      function onTemperatureData(value) {
+      function onUltrasonicData(value) {
         let data = JSON.parse(value)
-        setTemperatureData(previous => [...previous, {
-          temperature: data.data.temperature,
+        setUltrasonicData(previous => [...previous, {
+          distance: data.data.distance,
           timestamp: data.timestamp
         }]);
       }
   
       //Same as sensor fields in MQTT data
-      socket.on('temperature_sensor', onTemperatureData);
+      socket.on('Ultrasonic', onUltrasonicData);
   
       return () => {
-        socket.off('temperature_sensor', onTemperatureData);
+        socket.off('Ultrasonic', onUltrasonicData);
       };
     }, []);
 
     
     const config = {
-        yaxis: "temperature",
-        data: modifiedTemp
+        yaxis: "distance",
+        data: modifiedUltrasonic
     }
     
     return (
       <div>
-        <h1>Temperature in real time</h1>
+        <h1>Ultrasonic in real time</h1>
         <LineChartIoT {...config}/>  
       </div>
     );
 }
 
-export default Temperature
+export default Ultrasonic

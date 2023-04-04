@@ -2,6 +2,9 @@ const { Server } = require("socket.io");
 const mqtt = require('mqtt')
 const { TemperatureModel, DataStreamModel, AlertModel } = require("./schema")
 
+// io.emit - all client
+// socket.emit - only specific client
+
 // broker ocnfig
 let client;
 
@@ -33,7 +36,8 @@ io.on("connection", (socket) => {
 });
 
 io.on("buzzer", (socket) => {
-    console.log(socket.message)
+    console.log("buzzer")
+    console.log(socket)
     client.publish("buzzer", 'toggle', { qos: 0, retain: false }, (error) => {
         if (error) {
           console.error(error)
