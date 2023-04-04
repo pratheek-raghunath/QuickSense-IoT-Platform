@@ -46,17 +46,17 @@ services:
     networks:
       - cloud-iot-paas
 
-  # api:
-  #   build:
-  #     context: ./api
-  #   environment:
-  #     - ENVIRONMENT=prod
-  #   depends_on:
-  #     - mongo
-  #   ports:
-  #     - "3002:3002"
-  #   networks:
-  #     - cloud-iot-paas
+  api:
+    build:
+      context: ./api
+    environment:
+      - ENVIRONMENT=prod
+    depends_on:
+      - mongo
+    ports:
+      - "3002:3002"
+    networks:
+      - cloud-iot-paas
 
   web-gui:
     build:
