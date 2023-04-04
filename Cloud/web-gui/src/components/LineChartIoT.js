@@ -18,8 +18,8 @@ const LineChartIoT = ({ data, yaxis}) => {
               left: 20,
               bottom: 5,
             }}>
-          <XAxis className="mt-2"
-          dataKey="timestamp" label='time'  tickFormatter = {(timestamp) => moment(timestamp).format('HH:mm')} />
+          <XAxis
+          dataKey="timestamp"  tickFormatter = {(timestamp) => moment(timestamp).format('HH:mm')} />
           <YAxis />
           <Tooltip />
           <Legend/>
