@@ -43,7 +43,7 @@ const Ds1 = () => {
     
     return (
       <div>
-        <h1 className= "m-6">DS1 CPU temperature real time</h1>
+        <h1 className= "text-3xl font-bold underline">DS1 CPU temperature real time</h1>
         <LineChartIoT {...config}/>  
       </div>
     );
