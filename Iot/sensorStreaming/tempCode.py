@@ -14,7 +14,7 @@ client.connect('broker.orensaldanha.live', 1883)
 client.loop_start()
 
 while True:
-	humidity,temperature = Adafruit_DHT.read_retry(11,4)
+	humidity,temperature = Adafruit_DHT.read_retry(11,17)
 	data = {
 		"sensor" : "temperature_sensor",
 		"data": {
