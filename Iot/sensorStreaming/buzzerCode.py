@@ -17,6 +17,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("/buzzer")
 
 def on_message(client, userdata, msg):
+	global toggle
 	print("Toggle Buzzer")
 	if toggle:
 		buzzer.off()

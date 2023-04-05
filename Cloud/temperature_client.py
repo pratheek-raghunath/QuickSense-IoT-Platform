@@ -15,7 +15,7 @@ while True:
     data = {
         "sensor": "temperature_sensor",
         "data": {
-            "temperature": psutil.sensors_temperatures()['dell_smm'][0].current,
+            "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
         },
         "timestamp": str(datetime.datetime.now(IST))
     }
