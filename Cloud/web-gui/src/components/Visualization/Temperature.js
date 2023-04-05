@@ -42,7 +42,7 @@ const Temperature = () => {
 
   return (
     <div>
-      <h1 className="font-semibold text-gray-800">Temperature in real time</h1>
+      <h1 className="font-semibold text-gray-800 ml-6 mt-4">Temperature in real time</h1>
       <LineChartIoT {...config} />
     </div>
   );

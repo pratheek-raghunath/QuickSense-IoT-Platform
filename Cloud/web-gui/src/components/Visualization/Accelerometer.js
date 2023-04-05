@@ -28,10 +28,10 @@ const Accelerometer = () => {
     }
 
     //Same as sensor fields in MQTT data
-    socket.on("Accelerometer", onAccelerometerData);
+    socket.on("accelerometer", onAccelerometerData);
 
     return () => {
-      socket.off("Accelerometer", onAccelerometerData);
+      socket.off("accelerometer", onAccelerometerData);
     };
   }, []);
 
@@ -42,7 +42,7 @@ const Accelerometer = () => {
 
   return (
     <div>
-      <h1 className="font-semibold text-gray-800">
+      <h1 className="ml-6 mt-4 font-semibold text-gray-800">
         Accelerometer in real time
       </h1>
       <LineChartIoT {...config} />

@@ -42,7 +42,7 @@ const Ultrasonic = () => {
 
   return (
     <div>
-      <h1 className="font-semibold text-gray-800">Ultrasonic in real time</h1>
+      <h1 className="ml-6 mt-4 font-semibold text-gray-800">Ultrasonic in real time</h1>
       <LineChartIoT {...config} />
     </div>
   );
