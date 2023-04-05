@@ -1,5 +1,5 @@
-li {
-  animation: change 5s step-end both;
+#container {
+  animation: change 2s step-end both;
 }
 
 @keyframes change {
@@ -11,7 +11,7 @@ li {
   }
 }
 
-#alert {
+/* #alert {
   animation: changealert 5s infinite;
   animation-delay: 0s;
 }
@@ -23,4 +23,9 @@ li {
   to {
     color: black;
   }
-}
+} */
+
+/* .space {
+  margin-left: 70%;
+  
+} */
