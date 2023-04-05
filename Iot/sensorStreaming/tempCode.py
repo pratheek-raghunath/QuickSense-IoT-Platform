@@ -26,3 +26,4 @@ while True:
 	print(data)
 	(rc, mid) = client.publish('/temp', json.dumps(data), qos=1)
 	time.sleep(1)
+	
