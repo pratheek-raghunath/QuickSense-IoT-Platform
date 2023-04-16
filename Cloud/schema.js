@@ -45,6 +45,15 @@ const alertSchema = new Schema({
 
 const AlertModel = mongoose.model("Alert", alertSchema);
 
+const userSchema = new Schema({
+    email: String,
+    username: String, 
+    password: String,
+    sensors: [String]
+})
+
+const UserModel = mongoose.model("User", userSchema);
+
 module.exports = {
-    TemperatureModel, DataStreamModel, AlertModel
+    TemperatureModel, DataStreamModel, AlertModel, UserModel
 }
