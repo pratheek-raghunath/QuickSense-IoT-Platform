@@ -125,6 +125,7 @@ app.post("/auth/login", async (req, res) => {
         username: username
       }, jwt_secret)
       res.json({
+        user_id: user.id,
         username: username,
         accesstoken: accesstoken
       }) 
