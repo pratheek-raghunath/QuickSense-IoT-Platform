@@ -3,7 +3,9 @@ import socketContext from "../context/socket";
 import "../styles/Alertstyles.css";
 
 const Alert = () => {
-  const socket = useContext(socketContext);
+  const app_context = useContext(socketContext);
+  const socket = app_context.socket
+  const user_id = app_context.user_id
 
   const [alerts, setAlerts] = useState([]);
 
@@ -17,10 +19,10 @@ const Alert = () => {
       setAlerts((previous) => [...previous, alert]);
     }
 
-    socket.on("alert", onAlert);
+    socket.on(`/${user_id}/alert`, onAlert);
 
     return () => {
-      socket.off("alert", onAlert);
+      socket.off(`/${user_id}/alert`, onAlert);
     };
   }, []);
 

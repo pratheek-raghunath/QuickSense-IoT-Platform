@@ -22,5 +22,5 @@ while True:
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
-    (rc, mid) = client.publish(f'/{USER_ID}/alert/pressure', json.dumps(data), qos=1)
+    (rc, mid) = client.publish(f'/{USER_ID}/alert', json.dumps(data), qos=1)
     time.sleep(3)

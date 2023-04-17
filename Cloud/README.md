@@ -309,14 +309,14 @@ Alerts:
 - ir 
 - pressure
 
-/user_id/alert/sensor_name
-/643bfb6ab0324c8ec1cea8f0/alert/pressure
+/user_id/alert
+/643bfb6ab0324c8ec1cea8f0/alert
 
 Actions:
 - buzzer
 - servo
 
-/user_id/alert/sensor_name
+/user_id/action/sensor_name
 /643bfb6ab0324c8ec1cea8f0/action/buzzer
 
 # mosquitto testing

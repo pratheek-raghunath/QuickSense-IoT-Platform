@@ -10,11 +10,17 @@ import Visualization from './components/Visualization';
 import Alert from './components/Alert';
 import Action from "./components/Action"
 
-const socket = io("http://wss.orensaldanha.live");
+const user_id = "643d2b574682795b3ca92bc3"
+
+const socket = io("http://wss.orensaldanha.live", {
+  query: {
+      "user_id": user_id
+  }
+});
 //const socket = io("http://localhost:3000");
 
 function App() {
-
+  console.log(`User id: ${user_id}`)
   useEffect(() => {
     function onConnect() {
       console.log("websocket connected")
@@ -46,7 +52,7 @@ function App() {
   // );
 
   return (
-    <socketContext.Provider value={socket}>
+    <socketContext.Provider value={{socket: socket, user_id: user_id}}>
         <BrowserRouter>
           <Navbar />
           <Routes>
