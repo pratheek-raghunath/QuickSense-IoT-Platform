@@ -31,6 +31,7 @@ const TemperatureModel = mongoose.model("Temperature", temperatureSchema);
 
 const dataStreamSchema = new Schema({
     sensor: String,
+    user_id: String,
     data: Object,
     timestamp: Date,
 })
@@ -39,6 +40,7 @@ const DataStreamModel = mongoose.model("DataStream", dataStreamSchema);
 
 const alertSchema = new Schema({
     sensor: String,
+    user_id: String,
     message: String,
     timestamp: Date,
 })

@@ -294,18 +294,31 @@ sudo journalctl -u google-startup-scripts.service
 sudo google_metadata_script_runner startup
 ```
 
-# Sensor Names
+# Sensor Names with mqtt topic names / room names
 
-- accelerometer
-- gas
-- temperature
-- ultrasonic
+Data streams:
+- accelerometer 
+- gas 
+- temperature 
+- ultrasonic 
 
-- ir
+/user_id/data_stream/sensor_name
+/643bfb6ab0324c8ec1cea8f0/data_stream/temperature
+
+Alerts:
+- ir 
 - pressure
 
+/user_id/alert/sensor_name
+/643bfb6ab0324c8ec1cea8f0/alert/pressure
+
+Actions:
 - buzzer
 - servo
 
+/user_id/alert/sensor_name
+/643bfb6ab0324c8ec1cea8f0/action/buzzer
+
 # mosquitto testing
 mosquitto_sub -h $BROKER_URL -t "${USER_ID}/data_stream/temperature"
+mosquitto_pub -h $BROKER_URL -t "${USER_ID}/action/buzzer" -m "toggle"

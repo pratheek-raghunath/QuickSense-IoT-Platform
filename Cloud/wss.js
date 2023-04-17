@@ -1,11 +1,11 @@
 const { Server } = require("socket.io");
 const mqtt = require('mqtt')
-const { TemperatureModel, DataStreamModel, AlertModel } = require("./schema")
+const { DataStreamModel, AlertModel } = require("./schema")
 
 // io.emit - all client
 // socket.emit - only specific client
 
-// broker ocnfig
+// broker config
 let client;
 
 if(process.env.ENVIRONMENT == "prod") {
@@ -27,29 +27,42 @@ const io = new Server(3000,
       }
   }
 );
-let socket_id = null;
+
+let sockets = [];
+
+setInterval(() => {
+    console.log("\n\nSOCKETS")
+    sockets.map(socket => {
+        console.log(socket.socket.id, socket.user_id)
+    })
+    console.log("\n\n")
+}, 3000)
 
 io.on("connection", (socket) => {
-  console.log(socket.id);
-  socket_id = socket.id
-  socket.emit("hello", "world");
-
-  socket.on("buzzer", () => {
-    data = {
-            action:"toggle"
-    }
-    client.publish("/buzzer", JSON.stringify(data), { qos: 0, retain: false }, (error) => {
-        if (error) {
-          console.error(error)
-        }
-      })
+    user_id = socket.handshake.query.user_id
+    sockets.push({
+        socket: socket,
+        user_id: user_id
     })
 
-    socket.on("servo", () => {
+    socket.emit("hello", "world");
+
+    socket.on(`/${user_id}/action/buzzer`, () => {
         data = {
                 action:"toggle"
         }
-        client.publish("/servo", JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+        client.publish(`/${user_id}/action/buzzer`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+            if (error) {
+            console.error(error)
+            }
+        })
+    })
+
+    socket.on(`/${user_id}/action/servo`, () => {
+        data = {
+                action:"toggle"
+        }
+        client.publish(`/${user_id}/action/servo`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
             if (error) {
               console.error(error)
             }
@@ -74,33 +87,55 @@ io.on("connection", (socket) => {
 
 
 // worker node logic
-
 client.on('message', (topic, message) => {
     //console.log(topic, JSON.parse(message))
     // Store data in MongoDB
-    data = JSON.parse(message)
+    
+    user_id = topic.split("/")[1]
 
-    if (topic == "buzzer" || topic == "servo") {
-        //ignore
-    }
-    else if(topic.includes("alert")) {
-        io.emit("alert", JSON.stringify(data))
+    if(topic.includes("alert")) {
+        console.log(topic)
+
+        data = JSON.parse(message)
+
+        //Send to GUI
+        sockets.map(socket => {
+            
+            if(socket.user_id === user_id) {
+                socket.socket.emit(topic, JSON.stringify(data))
+            }
+                
+        })
+        //io.emit("alert", JSON.stringify(data))
+
         alert_instance = new AlertModel(data)
-
         alert_instance.save((err) => {
             if (err)
                 console.log(err);
         });
-    } else {
+    } else if(topic.includes("data_stream")) {
         //store data stream
-        console.log(data.sensor)
-        io.emit(data.sensor, JSON.stringify(data))
-        data_stream_instance = new DataStreamModel(data)
+        console.log(topic)
 
+        data = JSON.parse(message)
+
+        //Send to GUI
+        sockets.map(socket => {
+            
+            if(socket.user_id === user_id) {
+                socket.socket.emit(topic, JSON.stringify(data))
+            }
+                
+        })
+        //io.emit(data.sensor, JSON.stringify(data))
+
+        data_stream_instance = new DataStreamModel(data)
         data_stream_instance.save((err) => {
             if (err)
                 console.log(err);
         });
+    } else {
+        // do nothing
     }
 });
 

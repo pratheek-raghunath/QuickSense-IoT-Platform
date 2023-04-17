@@ -26,5 +26,5 @@ while True:
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
-    (rc, mid) = client.publish(f'{USER_ID}/data_stream/temperature', json.dumps(data), qos=1)
-    time.sleep(1)
+    (rc, mid) = client.publish(f'/{USER_ID}/data_stream/temperature', json.dumps(data), qos=1)
+    time.sleep(3)
