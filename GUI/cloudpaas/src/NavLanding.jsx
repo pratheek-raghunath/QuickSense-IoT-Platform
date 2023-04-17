@@ -13,8 +13,8 @@ function NavLanding() {
             class="mr-3 h-8"
             alt="Flowbite Logo"
           /> */}
-          <span class="self-center whitespace-nowrap text-2xl font-semibold text-neutral-200">
-            WaveSense
+          <span class="self-center whitespace-nowrap  text-2xl font-semibold text-neutral-200">
+            WAVESENSE
           </span>
         </a>
         <button
@@ -44,7 +44,7 @@ function NavLanding() {
             <li>
               <a
                 href="#"
-                class="md:text-grey-100 md:dark:text-grey-100 block rounded  py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0"
+                class="md:text-grey-100 md:dark:text-grey-100 block   py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 home
@@ -53,7 +53,7 @@ function NavLanding() {
             <li>
               <a
                 href="#"
-                class="md:text-grey-100 md:dark:text-grey-100 block rounded  py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0"
+                class="md:text-grey-100 md:dark:text-grey-100 block   py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0"
               >
                 sensor
               </a>
@@ -61,7 +61,7 @@ function NavLanding() {
             <li>
               <a
                 href="#"
-                class="md:text-grey-100 md:dark:text-grey-100 block rounded  py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0"
+                class="md:text-grey-100 md:dark:text-grey-100 block   py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0"
               >
                 login
               </a>
