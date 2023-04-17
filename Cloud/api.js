@@ -1,18 +1,39 @@
 const { UserModel } = require("./schema")
 const morgan = require('morgan');
+const jwt = require('jsonwebtoken')
+const cors = require('cors')
 
 const express = require('express')
 const app = express()
 const port = 3002
 
+const jwt_secret = "my-secret"
 
 //middleware
 app.use(morgan('tiny'))
+app.use(cors())
 app.use(express.json())
+
+const verify_token = (req, res, next) => {
+  const authHeader = req.headers.authorization
+  if (authHeader) {
+    const token = authHeader.split(" ")[1]
+    jwt.verify(token, jwt_secret, (err, user) => {
+      if (err) {
+        return res.status(403).json({"error": "Token is is not valid"})
+      }
+
+      req.user = user
+      next()
+    })
+  } else {
+    res.status(401).json({"error": "You are not authenticated"})
+  }
+}
 
 
 //user routes
-app.get('/users', async (req, res) => {
+app.get('/users', verify_token,  async (req, res) => {
   users = await UserModel.find().exec()
   console.log(users)
   res.json(users)
@@ -30,18 +51,23 @@ app.post('/users', async (req, res) => {
   res.status(201).json({"message": "User created successfully"})
 })
 
-app.get('/users/:id', async (req, res) => {
+app.get('/users/:id', verify_token, async (req, res) => {
   user_id = req.params.id
   console.log(`user_id: ${user_id}`)
   user = await UserModel.findById(user_id).exec()
   if (!user) {
     res.status(404).send({"error": "User not found"})
   } else {
+    // if (req.user.id !== user_id){
+    //   res.status(403).json({"error": "User not allowed to access this resource"})
+    // } else {
+      
+    // }
     res.json(user)
   }
 })
 
-app.put('/users/:id/add_sensor', async (req, res) => {
+app.put('/users/:id/add_sensor', verify_token, async (req, res) => {
   user_id = req.params.id
   sensor = req.body.sensor
 
@@ -61,7 +87,7 @@ app.put('/users/:id/add_sensor', async (req, res) => {
   res.status(200).json({"message": "Sensor added successfully"})
 })
 
-app.put('/users/:id/remove_sensor', async (req, res) => {
+app.put('/users/:id/remove_sensor', verify_token, async (req, res) => {
   user_id = req.params.id
   sensor = req.body.sensor
 
@@ -79,6 +105,33 @@ app.put('/users/:id/remove_sensor', async (req, res) => {
   }
 
   res.status(200).json({"message": "Sensor removed successfully"})
+})
+
+//authentication
+app.post("/auth/login", async (req, res) => {
+  const {username, password} = req.body
+
+  //validate that user credentials are valid 
+  const user = await UserModel.findOne({
+    username: username,
+    password: password
+  }).exec()
+  
+  console.log(user)
+
+  if (user) {
+      const accesstoken = jwt.sign({
+        id: user.id,
+        username: username
+      }, jwt_secret)
+      res.json({
+        username: username,
+        accesstoken: accesstoken
+      }) 
+  } else {
+    res.status(400).json("Username or password invalid")
+  }
+
 })
 
 app.get('/', (req, res) => {

@@ -277,6 +277,7 @@ dns lookup check - https://www.whatsmydns.net/
 mosquitto_pub -h broker.orensaldanha.live -t 'test/topic' -m 'helloWorld'
 mosquitto_sub -h broker.orensaldanha.live -t '/temp'
 
+
 ### nginx setup
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
 
@@ -292,3 +293,19 @@ gcloud compute ssh --zone "us-central1-c" "cloud-based-iot-deployment"  --projec
 sudo journalctl -u google-startup-scripts.service
 sudo google_metadata_script_runner startup
 ```
+
+# Sensor Names
+
+- accelerometer
+- gas
+- temperature
+- ultrasonic
+
+- ir
+- pressure
+
+- buzzer
+- servo
+
+# mosquitto testing
+mosquitto_sub -h $BROKER_URL -t "${USER_ID}/data_stream/temperature"
