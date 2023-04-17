@@ -320,5 +320,5 @@ Actions:
 /643bfb6ab0324c8ec1cea8f0/action/buzzer
 
 # mosquitto testing
-mosquitto_sub -h $BROKER_URL -t "${USER_ID}/data_stream/temperature"
-mosquitto_pub -h $BROKER_URL -t "${USER_ID}/action/buzzer" -m "toggle"
+mosquitto_sub -h $BROKER_URL -t "/${USER_ID}/data_stream/temperature"
+mosquitto_pub -h $BROKER_URL -t "/${USER_ID}/action/buzzer" -m "toggle"

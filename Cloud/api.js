@@ -73,7 +73,7 @@ app.put('/users/:id/add_sensor', verify_token, async (req, res) => {
 
   user = await UserModel.findById(user_id).exec()
   if (!user) {
-    res.status(404).send({"error": "User not found"})
+    return res.status(404).send({"error": "User not found"})
   } 
 
   console.log(user)
@@ -93,7 +93,7 @@ app.put('/users/:id/remove_sensor', verify_token, async (req, res) => {
 
   user = await UserModel.findById(user_id).exec()
   if (!user) {
-    res.status(404).send({"error": "User not found"})
+    return res.status(404).send({"error": "User not found"})
   } 
 
   console.log(user)
