@@ -18,7 +18,7 @@ function Footer() {
               class="mr-3 h-8"
               alt="Flowbite Logo"
             /> */}
-            <span class="self-center whitespace-nowrap  text-2xl font-semibold text-neutral-200">
+            <span class="self-center whitespace-nowrap  px-4 text-2xl font-semibold text-neutral-200">
               WAVESENSE
             </span>
           </a>
@@ -42,7 +42,7 @@ function Footer() {
           </ul>
         </div>
 
-        <span class="block text-sm text-neutral-400 dark:text-neutral-400 sm:text-justify">
+        <span class="block px-4 text-sm text-neutral-400 dark:text-neutral-400 sm:text-justify">
           © 2023{" "}
           <a href="https://wavesense.com/" class="hover:underline">
             WAVESENSE™
