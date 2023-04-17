@@ -42,13 +42,21 @@ app.get('/users', verify_token,  async (req, res) => {
 app.post('/users', async (req, res) => {
   user = req.body
   console.log(req.body)
-  user_instance = new UserModel(user)
-  user_instance.save((err) => {
-      if (err)
-          console.log(err);
-  });
-  console.log("User created successfully")
-  res.status(201).json({"message": "User created successfully"})
+
+  //check if user exists
+  const existing_user = await UserModel.findOne({username : user.username }).exec() 
+  if(!existing_user) {
+    user_instance = new UserModel(user)
+    user_instance.save((err) => {
+        if (err)
+            console.log(err);
+    });
+    console.log("User created successfully")
+    res.status(201).json({"message": "User created successfully"})
+  } else {
+    res.status(409).json({"message": "User already exists"})
+  }
+  
 })
 
 app.get('/users/:id', verify_token, async (req, res) => {
