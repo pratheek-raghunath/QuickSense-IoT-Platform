@@ -3,7 +3,9 @@ import socketContext from "../../context/socket";
 import LineChartIoT from "../LineChartIoT";
 
 const Temperature = () => {
-  const socket = useContext(socketContext);
+  const app_context = useContext(socketContext);
+  const socket = app_context.socket
+  const user_id = app_context.user_id
 
   const [temperatureData, setTemperatureData] = useState([]);
 
@@ -28,10 +30,10 @@ const Temperature = () => {
     }
 
     //Same as sensor fields in MQTT data
-    socket.on("temperature_sensor", onTemperatureData);
+    socket.on(`/${user_id}/data_stream/temperature`, onTemperatureData);
 
     return () => {
-      socket.off("temperature_sensor", onTemperatureData);
+      socket.off(`/${user_id}/data_stream/temperature`, onTemperatureData);
     };
   }, []);
 

@@ -27,7 +27,7 @@ const Alert = () => {
   }, []);
 
   return (
-    <div class="bg-red m-20  flex flex-col items-center rounded-lg border border-gray-200  p-6 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div className="bg-red m-20  flex flex-col items-center rounded-lg border border-gray-200  p-6 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
       <h1 id="alert" class="mb-2 text-2xl font-bold tracking-tight ">
         Alerts in real time
       </h1>

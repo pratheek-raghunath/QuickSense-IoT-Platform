@@ -3,7 +3,9 @@ import socketContext from "../../context/socket";
 import LineChartIoT from "../LineChartIoT";
 
 const Ultrasonic = () => {
-  const socket = useContext(socketContext);
+  const app_context = useContext(socketContext);
+  const socket = app_context.socket
+  const user_id = app_context.user_id
 
   const [ultrasonicData, setUltrasonicData] = useState([]);
 
@@ -28,10 +30,10 @@ const Ultrasonic = () => {
     }
 
     //Same as sensor fields in MQTT data
-    socket.on("Ultrasonic", onUltrasonicData);
+    socket.on(`/${user_id}/data_stream/accelerometer`, onUltrasonicData);
 
     return () => {
-      socket.off("Ultrasonic", onUltrasonicData);
+      socket.off(`/${user_id}/data_stream/accelerometer`, onUltrasonicData);
     };
   }, []);
 
