@@ -1,4 +1,4 @@
-const { UserModel } = require("./schema")
+const { UserModel, DataStreamModel } = require("./schema")
 const morgan = require('morgan');
 const jwt = require('jsonwebtoken')
 const cors = require('cors')
@@ -142,6 +142,30 @@ app.post("/auth/login", async (req, res) => {
   }
 
 })
+
+app.get('/users/:id/status/:sensor_name', verify_token, async (req, res) => {
+  user_id = req.params.id
+  sensor_name = req.params.sensor_name
+
+
+  // Implement Authroization
+
+  // Sensor is running if data stream data was updated in the last 30 seconds
+  const status = await DataStreamModel.find(
+    { user_id: user_id, 
+      sensor: sensor_name, 
+      timestamp: {
+        $gt: new Date(new Date().getTime() - 1000 * 30 * 1)
+      }
+    }
+  ).exec()
+
+  if(status.length > 0) {
+    res.json({"message": "running"})
+  } else {
+    res.json({"message": "not running"})
+  }
+})  
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

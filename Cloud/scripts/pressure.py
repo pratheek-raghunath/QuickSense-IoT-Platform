@@ -15,12 +15,27 @@ client.connect(BROKER_URL, 1883)
 client.loop_start()
 
 while True:
-    data = {
-        "sensor": "pressure",
-        "user_id": USER_ID,
-        "message": "Under Pressure",
-        "timestamp": str(datetime.datetime.now(IST))
-    }
-    print(data)
-    (rc, mid) = client.publish(f'/{USER_ID}/alert', json.dumps(data), qos=1)
-    time.sleep(3)
+    print(datetime.datetime.now().strftime("%S"))
+    if int(datetime.datetime.now().strftime("%S")) % 5 == 0:
+        data = {
+            "sensor": "pressure",
+            "user_id": USER_ID,
+            "data": {
+                "status": "running"
+            },
+            "timestamp": str(datetime.datetime.now(IST))
+        }
+        print(data)
+        (rc, mid) = client.publish(f'/{USER_ID}/data_stream/pressure', json.dumps(data), qos=1)
+
+    elif int(datetime.datetime.now().strftime("%S")) % 3 == 0:
+        data = {
+            "sensor": "pressure",
+            "user_id": USER_ID,
+            "message": "Under Pressure",
+            "timestamp": str(datetime.datetime.now(IST))
+        }
+        print(data)
+        (rc, mid) = client.publish(f'/{USER_ID}/alert', json.dumps(data), qos=1)
+
+    time.sleep(1)
