@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import NavLanding from "./NavLanding";
-import Footer from "./components/Footer";
+import Footer from "./Footer";
 import Home from "./components/Home";
 
 function App() {
