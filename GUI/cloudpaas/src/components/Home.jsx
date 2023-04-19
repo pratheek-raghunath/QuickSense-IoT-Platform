@@ -7,12 +7,12 @@ function Home() {
             <source src={Video} type='video/mp4' />
         </video>
         <div className="overlay"></div>
-        <div className="absolute top-0 h-full flex justify-center flex-col text-center w-full m-auto p-4 text-white">
+        <div className=" top-0 h-full flex justify-center flex-col text-center w-full m-auto p-4 text-white">
             <h1>KULLA GANG</h1>
             <h2>Open Source IoT Platform</h2>
             <h5>Device management, data collection, processing and visualization for your IoT solution</h5>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-96 rounded"> Learn More</button>
-        </div>
+        </div> 
     </div>
 
     );

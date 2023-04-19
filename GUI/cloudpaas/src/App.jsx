@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import OverView from "./components/OverView";
 import Home from "./components/Home";
 import NavUser from "./NavUser";
+import Login from "./components/login";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/overview" element={<OverView />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
       <Footer />
