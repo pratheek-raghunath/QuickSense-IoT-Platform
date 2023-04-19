@@ -5,9 +5,10 @@ import NavLanding from "./NavLanding";
 import Footer from "./Footer";
 import OverView from "./components/OverView";
 import Home from "./components/Home";
-import Login from "./components/login";
 import { Carousel, initTE } from "tw-elements";
 import Login2 from "./components/Login2";
+import SignUp from "./components/SignUp";
+import NavUser from "./NavUser";
 initTE({ Carousel });
 
 function App() {
@@ -16,11 +17,13 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <NavLanding />
+      {/* <NavUser /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/overview" element={<OverView />} />
-          <Route path="/login2" element={<Login2 />} />
+          <Route path="/login" element={<Login2 />} />
+          <Route path="/signUp" element={<SignUp />} />
           {/* <Route path="/login2" element={<Login2 />} /> */}
         </Routes>
       </BrowserRouter>

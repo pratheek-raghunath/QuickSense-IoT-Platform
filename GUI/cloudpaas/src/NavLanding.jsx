@@ -14,7 +14,7 @@ function NavLanding() {
                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Kulla Gang</span>
                 </a>
                 <div class="flex items-center md:order-2">
-                <a type="button" href="/login2" class="text-white font-semibold border-white border-2 bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
+                <a type="button" href="/login" class="text-white font-semibold border-white border-2 bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
                     {/* <!-- Dropdown menu --> */}
                     <div class="z-50 hidden my-4 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600" id="user-dropdown">
                         <div class="px-4 py-3">
@@ -55,8 +55,5 @@ function NavLanding() {
         </nav>
   );
 }
-const navigateLogin = () => {
-    // 👇️ navigate to /
-    navigate('/login');
-  };
+
 export default NavLanding;
