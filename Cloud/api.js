@@ -161,9 +161,9 @@ app.get('/users/:id/status/:sensor_name', verify_token, async (req, res) => {
   ).exec()
 
   if(status.length > 0) {
-    res.json({"message": "running"})
+    res.json({"message": "Running"})
   } else {
-    res.json({"message": "not running"})
+    res.json({"message": "Stopped"})
   }
 })  
 
