@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.39",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.3",
     "react": "^18.2.0",
