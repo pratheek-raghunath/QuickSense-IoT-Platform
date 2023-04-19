@@ -4,7 +4,7 @@ mongoose.set('strictQuery', false);
 let mongoDB;
 
 if(process.env.ENVIRONMENT == "prod") {
-    mongoDB = "mongodb://cloud-iot:asDDffb@mongo/cloud-iot-paas";
+    mongoDB = "mongodb://cloud-iot:asDDffb@34.122.170.116:27017/cloud-iot-paas";
 }
 else {
     mongoDB = "mongodb://cloud-iot:asDDffb@localhost:27017/";
