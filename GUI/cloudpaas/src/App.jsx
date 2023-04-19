@@ -10,9 +10,9 @@ function App() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <NavLanding />
+      {/* <NavLanding /> */}
       {/* <Home /> */}
-      {/* <OverView /> */}
+      <OverView />
       <Footer />
     </div>
   );
