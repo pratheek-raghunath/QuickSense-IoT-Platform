@@ -12,7 +12,7 @@ function App() {
     <div className="flex min-h-screen flex-col">
       <NavLanding />
       {/* <Home /> */}
-      <OverView />
+      {/* <OverView /> */}
       <Footer />
     </div>
   );
