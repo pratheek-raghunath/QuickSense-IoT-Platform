@@ -20,8 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/overview" element={<OverView />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/login2" element={<Login2 />} />
+          {/* <Route path="/login2" element={<Login2 />} /> */}
         </Routes>
       </BrowserRouter>
       <Footer />
