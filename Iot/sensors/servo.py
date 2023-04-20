@@ -40,6 +40,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(f"/{USER_ID}/action/servo")
 
 def on_message(client, userdata, msg):
+   global toggle
    print("Toggle servo")
    if toggle:
         for i in range(0,91):  
