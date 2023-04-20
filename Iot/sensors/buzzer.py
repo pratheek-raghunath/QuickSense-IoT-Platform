@@ -4,6 +4,7 @@ import os
 import pytz
 import datetime
 import time
+import json
 
 IST = pytz.timezone('Asia/Kolkata')
 
@@ -57,6 +58,6 @@ try:
 			print(data)
 			(rc, mid) = client.publish(f'/{USER_ID}/data_stream/buzzer', json.dumps(data), qos=1)
 		time.sleep(1)
-except:
+except :
 	print("Stopping mqtt loop")
 	client.loop_stop()
