@@ -1,12 +1,11 @@
-import React from 'react';
-import NavUser from '../NavUser';
-
-function OverView() {
+const OverView = () => {
+    //navigate to dashboard automatically if auth token is present in local storage
+    
     return (
-        <div>
-            <NavUser />
-        </div>
-    );
+        <p class="text-sm font-light  text-gray-400">
+            Overview
+        </p>
+    )
 }
 
-export default OverView;
+export default OverView
