@@ -73,7 +73,7 @@ function Footer() {
     // </footer>
 
     // bg-gray-800 border-gray-600
-    <footer class=" bottom-0 left-0 z-20 mt-auto w-full border-t border-gray-200 bg-gray-900 p-4 shadow md:flex md:items-center md:justify-between md:p-6">
+    <footer class=" bottom-0 left-0 z-20  mt-auto w-full border-t border-gray-200 bg-gray-900 p-4 shadow md:flex md:items-center md:justify-between md:p-6">
       <span class="text-sm text-white sm:text-center">
         © 2023{" "}
         <a href="https://flowbite.com/" class="hover:underline">
