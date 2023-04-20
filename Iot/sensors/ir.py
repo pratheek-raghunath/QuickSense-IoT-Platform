@@ -49,17 +49,17 @@ try:
         else:
             GPIO.output(buzzer,False)
 
-        if int(datetime.datetime.now().strftime("%S")) % 5 == 0:
-            data = {
-                "sensor": "ir",
-                "user_id": USER_ID,
-                "data": {
-                    "status": "running"
-                },
-                "timestamp": str(datetime.datetime.now(IST))
-            }
-            print(data)
-            (rc, mid) = client.publish(f'/{USER_ID}/data_stream/ir', json.dumps(data), qos=1)
+        # if int(datetime.datetime.now().strftime("%S")) % 5 == 0:
+        #     data = {
+        #         "sensor": "ir",
+        #         "user_id": USER_ID,
+        #         "data": {
+        #             "status": "running"
+        #         },
+        #         "timestamp": str(datetime.datetime.now(IST))
+        #     }
+        #     print(data)
+        #     (rc, mid) = client.publish(f'/{USER_ID}/data_stream/ir', json.dumps(data), qos=1)
 
 
 except KeyboardInterrupt:

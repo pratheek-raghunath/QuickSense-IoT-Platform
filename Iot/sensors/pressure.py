@@ -50,17 +50,17 @@ while True:
     prev_input = input
 
     # For publishing status messages
-    if int(datetime.datetime.now().strftime("%S")) % 5 == 0:
-        data = {
-            "sensor": "pressure",
-            "user_id": USER_ID,
-            "data": {
-                "status": "running"
-            },
-            "timestamp": str(datetime.datetime.now(IST))
-        }
-        print(data)
-        (rc, mid) = client.publish(f'/{USER_ID}/data_stream/pressure', json.dumps(data), qos=1)
+    # if int(datetime.datetime.now().strftime("%S")) % 5 == 0:
+    #     data = {
+    #         "sensor": "pressure",
+    #         "user_id": USER_ID,
+    #         "data": {
+    #             "status": "running"
+    #         },
+    #         "timestamp": str(datetime.datetime.now(IST))
+    #     }
+    #     print(data)
+    #     (rc, mid) = client.publish(f'/{USER_ID}/data_stream/pressure', json.dumps(data), qos=1)
 
 #	time.sleep(0.10)
     #update previous input so we can avoid spamming the Shell with messages, 
