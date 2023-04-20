@@ -10,6 +10,7 @@ import Login2 from "./components/Login2";
 import SignUp from "./components/SignUp";
 import BeforeAuth from "./components/BeforeAuth";
 import AfterAuth from "./components/AfterAuth";
+import Alert from "./components/Alert";
 import NavUser from "./NavUser";
 initTE({ Carousel });
 
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/signUp" element={<SignUp />} />
               </Route>
               <Route path="/dashboard" element={<AfterAuth />}>
+                 <Route path="alert" element={<Alert/>} />
                   <Route path="" element={<OverView />} />
                   {/* <Route path='alert' element={ <Alerts />} /> */}
               </Route>

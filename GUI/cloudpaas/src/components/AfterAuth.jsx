@@ -57,7 +57,7 @@ const AfterAuth = () => {
     if(user.isLoggedIn) {
       return (
         <div>
-          <userContext.Provider value={{socket: user.socket, user: user}}>
+          <userContext.Provider value={{socket: user.socket, user: user.user}}>
             <NavUser/>
               <Outlet/>
             <Footer/>
