@@ -12,9 +12,11 @@
     "@fullpage/react-fullpage": "^0.1.39",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.3",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
+    "recharts": "^2.5.0",
     "socket.io-client": "^4.6.1",
     "tw-elements": "^1.0.0-beta2"
   },

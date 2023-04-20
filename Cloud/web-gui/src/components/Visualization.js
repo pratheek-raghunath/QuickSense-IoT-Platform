@@ -8,8 +8,6 @@ import Gas from "./Visualization/Gas";
 const Visualization = () => {
   return (
     <div>
-      {/* <Ds1 />
-        <Ds2 /> */}
       <Temperature />
       <Ultrasonic />
       <Accelerometer />

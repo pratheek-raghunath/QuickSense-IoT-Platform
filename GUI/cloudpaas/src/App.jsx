@@ -38,20 +38,23 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <BrowserRouter>
-          <Routes>
-              <Route path='/' element={<BeforeAuth />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/overview" element={<OverView />} />
-                <Route path="/login" element={<Login2 />} />
-                <Route path="/signUp" element={<SignUp />} />
-              </Route>
-              <Route path="/dashboard" element={<AfterAuth />}>
-                 <Route path="alert" element={<Alert/>} />
-                  <Route path="visualization" element={<Visualization/>}/>
-                  <Route path="" element={<OverView />} />
-                  {/* <Route path='alert' element={ <Alerts />} /> */}
-              </Route>
-          </Routes>
+        <Routes>
+          <Route path="/" element={<BeforeAuth />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/overview" element={<OverView />} />
+            <Route path="/login" element={<Login2 />} />
+            <Route path="/signUp" element={<SignUp />} />
+          </Route>
+          <Route path="/dashboard" element={<AfterAuth />}>
+            <Route path="alert" element={<Alert />} />
+            <Route path="visualisation" element={<Visualization />} />
+            {/* <Route path="sensor" element={<Sensor/>}/> */}
+            {/* <Route path="microprocessor" element={<Microprocessor/>}/> */}
+            {/* <Route path="actions" element={<Actions/>}/> */}
+            <Route path="" element={<OverView />} />
+            {/* <Route path='alert' element={ <Alerts />} /> */}
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );

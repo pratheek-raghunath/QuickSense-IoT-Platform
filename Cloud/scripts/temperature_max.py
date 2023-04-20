@@ -20,11 +20,12 @@ while True:
         "sensor": "temperature",
         "user_id": USER_ID,
         "data": {
-            "temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
-            "humidity": psutil.sensors_temperatures()['thinkpad'][0].current
+            "temperature": psutil.sensors_temperatures()['dell_smm'][0].current,
+            "humidity": psutil.sensors_temperatures()['dell_smm'][0].current
         },
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
-    (rc, mid) = client.publish(f'/{USER_ID}/data_stream/temperature', json.dumps(data), qos=1)
+    (rc, mid) = client.publish(
+        f'/{USER_ID}/data_stream/temperature', json.dumps(data), qos=1)
     time.sleep(3)

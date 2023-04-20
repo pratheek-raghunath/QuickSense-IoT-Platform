@@ -108,9 +108,9 @@ function NavUser() {
                 className={({ isActive }) =>
                   isActive ? "font-bold text-blue-700 " : "font-bold text-white"
                 }
-                to="/dashboard/analytics"
+                to="/dashboard/visualisation"
               >
-                Analytics
+                Visualisation
               </NavLink>
             </li>
             <li>
@@ -136,28 +136,42 @@ function NavUser() {
               >
                 Sensors
               </NavLink>
+            </li>
+            <li>
+              <NavLink
+                class="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-500"
+                aria-current="page"
+                className={({ isActive }) =>
+                  isActive ? "font-bold text-blue-700 " : "font-bold text-white"
+                }
+                to="/dashboard/microprocessor"
+              >
+                Microprocessor
+              </NavLink>
               {/* <a
                 href="#"
                 class="block rounded border-gray-700 py-2 pl-3  pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
               >
-                Sensors
+                Microprocessor
               </a> */}
             </li>
             <li>
-              <a
-                href="#"
-                class="block rounded border-gray-700 py-2 pl-3  pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
+              <NavLink
+                class="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-500"
+                aria-current="page"
+                className={({ isActive }) =>
+                  isActive ? "font-bold text-blue-700 " : "font-bold text-white"
+                }
+                to="/dashboard/actions"
               >
-                Microprocessor
-              </a>
-            </li>
-            <li>
-              <a
+                Actions
+              </NavLink>
+              {/* <a
                 href="#"
                 class="block rounded border-gray-700 py-2 pl-3  pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
               >
                 Actions
-              </a>
+              </a> */}
             </li>
           </ul>
         </div>
