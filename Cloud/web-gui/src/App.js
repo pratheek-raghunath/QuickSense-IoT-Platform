@@ -9,8 +9,9 @@ import Navbar from "./components/Navbar"
 import Visualization from './components/Visualization';
 import Alert from './components/Alert';
 import Action from "./components/Action"
+import Stats from './components/Stats';
 
-const user_id = "643d2b574682795b3ca92bc3"
+const user_id = "644001927612de978c145a14"
 
 const socket = io("http://wss.orensaldanha.live", {
   query: {
@@ -59,6 +60,7 @@ function App() {
             <Route path="/" element={<Visualization />} />
             <Route path="/alerts" element={<Alert />} />
             <Route path="/actions" element={<Action />} />
+            <Route path="/stats" element={<Stats />} />
           </Routes>
       </BrowserRouter>
     </socketContext.Provider>

@@ -15,6 +15,9 @@ function Navbar() {
           <li>
             <Link to="/actions">Actions</Link>
           </li>
+          <li>
+            <Link to="/stats">Stats</Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -324,6 +324,13 @@ mosquitto_sub -h $BROKER_URL -t "/${USER_ID}/data_stream/temperature"
 mosquitto_pub -h $BROKER_URL -t "/${USER_ID}/action/buzzer" -m "toggle"
 sudo docker-compose -f docker-compose.prod.yaml up -d --no-deps --build api
 
+# Add to bashrc
+```bash
+export BROKER_URL="broker.orensaldanha.live"
+export USER_ID="644001927612de978c145a14"
+```
+
+# Store user in local storage
 ```
 const user = {
   user_id: "644001927612de978c145a14",
