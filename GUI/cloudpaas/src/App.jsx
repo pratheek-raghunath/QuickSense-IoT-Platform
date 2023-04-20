@@ -12,6 +12,7 @@ import BeforeAuth from "./components/BeforeAuth";
 import AfterAuth from "./components/AfterAuth";
 import Alert from "./components/Alert";
 import NavUser from "./NavUser";
+import Visualization from "./components/Visualization";
 initTE({ Carousel });
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
               </Route>
               <Route path="/dashboard" element={<AfterAuth />}>
                  <Route path="alert" element={<Alert/>} />
+                  <Route path="visualization" element={<Visualization/>}/>
                   <Route path="" element={<OverView />} />
                   {/* <Route path='alert' element={ <Alerts />} /> */}
               </Route>
