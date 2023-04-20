@@ -23,22 +23,25 @@ if __name__ == '__main__':
     ser.reset_input_buffer()
     while True:
         if ser.in_waiting > 0:
-            time.sleep(5)
-            line = ser.readline().decode('utf-8').rstrip()
-            value = line.split(":")[1].split("|")[0].strip()
-            msg = line.split(":")[1].split("|")[1].strip()
+            try:
+                time.sleep(5)
+                line = ser.readline().decode('utf-8').rstrip()
+                value = line.split(":")[1].split("|")[0].strip()
+                msg = line.split(":")[1].split("|")[1].strip()
 
-            print(line)
-            data = {
-                "sensor": "gas",
-                "user_id": USER_ID,
-                "data": {
-                    "value": value, 
-                    "message": msg
-                },
-                "timestamp": str(datetime.datetime.now(IST))
-            }
+                print(line)
+                data = {
+                    "sensor": "gas",
+                    "user_id": USER_ID,
+                    "data": {
+                        "value": value, 
+                        "message": msg
+                    },
+                    "timestamp": str(datetime.datetime.now(IST))
+                }
 
-            print(data)
-            (rc, mid) = client.publish(f'/{USER_ID}/data_stream/gas', json.dumps(data), qos=1)
-            time.sleep(1)
+                print(data)
+                (rc, mid) = client.publish(f'/{USER_ID}/data_stream/gas', json.dumps(data), qos=1)
+                time.sleep(1)
+            except Exception as e:
+                print(e)
