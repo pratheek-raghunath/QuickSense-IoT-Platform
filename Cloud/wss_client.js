@@ -2,9 +2,9 @@ const { io } = require("socket.io-client");
 
 USER_ID = process.env.USER_ID
 
-const socket = io("http://localhost:3000", {
+const socket = io("http://wss.orensaldanha.live", {
     query: {
-        "user_id": "643bfb6ab0324c8ec1cea8f0"
+        "user_id": process.env.USER_ID
     }
 });
 
@@ -14,7 +14,7 @@ socket.on(`/${USER_ID}/data_stream/temperature`, (data) => {
     console.log(data)
 })
 
-socket.on(`/${USER_ID}/alert/pressure`, (data) => {
+socket.on(`/${USER_ID}/alert`, (data) => {
     console.log(data)
 })
 
