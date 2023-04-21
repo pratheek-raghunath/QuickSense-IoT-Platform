@@ -48,7 +48,7 @@ function App() {
           <Route path="/dashboard" element={<AfterAuth />}>
             <Route path="alert" element={<Alert />} />
             <Route path="visualisation" element={<Visualization />} />
-            {/* <Route path="sensor" element={<Sensor/>}/> */}
+            <Route path="sensor" element={<Sensor />} />
             {/* <Route path="microprocessor" element={<Microprocessor/>}/> */}
             {/* <Route path="actions" element={<Actions/>}/> */}
             <Route path="" element={<OverView />} />

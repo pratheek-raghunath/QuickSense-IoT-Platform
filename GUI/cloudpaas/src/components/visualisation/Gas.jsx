@@ -2,51 +2,50 @@ import { useState, useEffect, useContext } from "react";
 import userContext from "../../context/userContext";
 import LineChartIoT from "../LineChartIoT";
 
-const Ultrasonic = () => {
+const Gas = () => {
   const { socket, user } = useContext(userContext);
 
-  const [ultrasonicData, setUltrasonicData] = useState([]);
-  console.log(ultrasonicData);
+  const [gasData, setGasData] = useState([]);
 
   // move this to a Utility function
-  const modifiedUltrasonic = ultrasonicData.map((cur) => {
+  const modifiedGas = gasData.map((cur) => {
     return {
-      distance: cur.distance,
+      value: cur.value,
       timestamp: new Date(cur.timestamp),
     };
   });
 
   useEffect(() => {
-    function onUltrasonicData(value) {
+    function onGasData(value) {
       let data = JSON.parse(value);
-      setUltrasonicData((previous) => [
+      setGasData((previous) => [
         ...previous,
         {
-          distance: data.data.distance,
+          value: data.data.value,
           timestamp: data.timestamp,
         },
       ]);
     }
 
     //Same as sensor fields in MQTT data
-    socket.on(`/${user.user_id}/data_stream/ultrasonic`, onUltrasonicData);
+    socket.on(`/${user.user_id}/data_stream/gas`, onGasData);
 
     return () => {
-      socket.off(`/${user.user_id}/data_stream/ultrasonic`, onUltrasonicData);
+      socket.off(`/${user.user_id}/data_stream/gas`, onGasData);
     };
   }, []);
 
   const config = {
-    yaxis: "distance",
-    data: modifiedUltrasonic,
+    yaxis: "value",
+    data: modifiedGas,
   };
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="  mt-4   font-semibold text-white">Ultrasonic</h1>
+      <h1 className="  mt-4   font-semibold text-white">Gas</h1>
       <LineChartIoT {...config} />
     </div>
   );
 };
 
-export default Ultrasonic;
+export default Gas;

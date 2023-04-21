@@ -1,5 +1,7 @@
-import Temperature from "../components/visualisation/Temperature";
-import Ultrasonic from "../components/visualisation/Ultrasonic";
+import Temperature from "./visualisation/Temperature";
+import Ultrasonic from "./visualisation/Ultrasonic";
+import Accelerometer from "./visualisation/Accelerometer";
+import Gas from "./visualisation/Gas";
 
 const Visualization = () => {
   return (
@@ -12,16 +14,15 @@ const Visualization = () => {
           <Temperature />
         </div>
         <div class="float-right">
-          {/* <Ultrasonic /> */}
-          <Temperature />
+          <Ultrasonic />
         </div>
       </div>
       <div className="flow-root">
         <div class="float-left">
-          <Temperature />
+          <Accelerometer />
         </div>
         <div class="float-right">
-          <Temperature />
+          <Gas />
         </div>
       </div>
     </div>
@@ -29,17 +30,3 @@ const Visualization = () => {
 };
 
 export default Visualization;
-
-{
-  /* <div className="float-left"></div>
-<div>
-          <Temperature />
-        </div>
-      </div>
-      <div className="float-left ">
-        <div>
-          <Temperature />
-        </div>
-      </div>
-</div> */
-}
