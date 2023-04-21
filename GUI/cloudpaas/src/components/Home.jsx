@@ -6,7 +6,7 @@ function Home() {
         {/* <video autoPlay loop muted id='video' className="w-full h-full object-cover -z-10">
             <source src={Video} type='video/mp4' />
         </video> */}
-        <img src="../../src/images/IotBg.jpeg" alt="Image" border="0" className="w-full h-full object-cover -z-10"></img>
+        <img src="../../src/images/1.jpg" alt="Image" border="0" className="w-full h-full object-cover -z-10"></img>
         {/* <div className="overlay"></div>
         <div className=" top-0 h-full flex justify-center flex-col text-center w-full m-auto p-4 text-white">
             <h1>KULLA GANG</h1>
