@@ -148,12 +148,6 @@ function NavUser() {
               >
                 Microprocessor
               </NavLink>
-              {/* <a
-                href="#"
-                class="block rounded border-gray-700 py-2 pl-3  pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
-              >
-                Microprocessor
-              </a> */}
             </li>
             <li>
               <NavLink
@@ -166,12 +160,6 @@ function NavUser() {
               >
                 Actions
               </NavLink>
-              {/* <a
-                href="#"
-                class="block rounded border-gray-700 py-2 pl-3  pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
-              >
-                Actions
-              </a> */}
             </li>
           </ul>
         </div>

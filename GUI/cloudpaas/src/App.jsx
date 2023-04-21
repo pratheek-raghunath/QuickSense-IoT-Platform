@@ -13,27 +13,13 @@ import AfterAuth from "./components/AfterAuth";
 import Alert from "./components/Alert";
 import NavUser from "./NavUser";
 import Visualization from "./components/Visualization";
+import Sensor from "./components/Sensor";
+import Microprocessor from "./components/Microprocessor";
+import Actions from "./components/Actions";
 initTE({ Carousel });
 
 function App() {
   const [count, setCount] = useState(0);
-
-  // return (
-  //   <div className="flex min-h-screen flex-col">
-  //     <NavLanding />
-  //     {/* <NavUser /> */}
-  //     <BrowserRouter>
-  //       <Routes>
-  //         <Route path="/" element={<Home />} />
-  //         <Route path="/overview" element={<OverView />} />
-  //         <Route path="/login" element={<Login2 />} />
-  //         <Route path="/signUp" element={<SignUp />} />
-  //         {/* <Route path="/login2" element={<Login2 />} /> */}
-  //       </Routes>
-  //     </BrowserRouter>
-  //     <Footer />
-  //   </div>
-  // );
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -49,10 +35,9 @@ function App() {
             <Route path="alert" element={<Alert />} />
             <Route path="visualisation" element={<Visualization />} />
             <Route path="sensor" element={<Sensor />} />
-            {/* <Route path="microprocessor" element={<Microprocessor/>}/> */}
-            {/* <Route path="actions" element={<Actions/>}/> */}
-            <Route path="" element={<OverView />} />
-            {/* <Route path='alert' element={ <Alerts />} /> */}
+            <Route path="microprocessor" element={<Microprocessor />} />
+            <Route path="actions" element={<Actions />} />
+            {/* <Route path="" element={<OverView />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>
