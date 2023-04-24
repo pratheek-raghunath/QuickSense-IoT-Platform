@@ -15,7 +15,7 @@
 # pwm.stop()  
 # gp.cleanup()  
 
-#Left door servo ()
+#Right door servo ()
 
 import RPi.GPIO as gp  
 import time 
@@ -45,13 +45,13 @@ def on_message(client, userdata, msg):
    global toggle
    print("Toggle servo")
    if toggle:
-        for i in range(0,91):  
+        for i in range(180, 90, -1):  
             sig=(i/18)+2  
             pwm.ChangeDutyCycle(sig)  
             time.sleep(0.03)  
         toggle = False
    else:
-        for i in range(90,-1,-1):  
+        for i in range(90, 181, 1):  
             sig=(i/18)+2  
             pwm.ChangeDutyCycle(sig)  
             time.sleep(0.03)  
