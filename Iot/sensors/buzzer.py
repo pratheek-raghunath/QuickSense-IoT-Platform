@@ -1,4 +1,5 @@
 from gpiozero import Buzzer
+import RPi.GPIO as GPIO
 import paho.mqtt.client as mqtt
 import os
 import pytz
@@ -12,6 +13,17 @@ BROKER_URL = os.environ.get('BROKER_URL')
 USER_ID = os.environ.get('USER_ID')
 
 buzzer = Buzzer(22)
+
+LED_1 = 23
+LED_2 = 24
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(LED_1,GPIO.OUT)
+GPIO.setup(LED_2,GPIO.OUT)
+
+GPIO.output(LED_1,GPIO.LOW)
+GPIO.output(LED_2,GPIO.LOW)
 
 # while True:
 # 	buzzer.on()
@@ -30,9 +42,13 @@ def on_message(client, userdata, msg):
 	print("Toggle Buzzer")
 	if toggle:
 		buzzer.off()
+		GPIO.output(LED_1,GPIO.LOW)
+		GPIO.output(LED_2,GPIO.LOW)
 		toggle = False
 	else:
 		buzzer.on()
+		GPIO.output(LED_1,GPIO.HIGH)
+		GPIO.output(LED_2,GPIO.HIGH)
 		toggle = True
 
 client = mqtt.Client()
