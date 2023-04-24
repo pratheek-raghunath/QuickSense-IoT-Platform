@@ -33,8 +33,8 @@ USER_ID = os.environ.get('USER_ID')
 toggle = False
 
 gp.setmode(gp.BOARD)  
-gp.setup(21,gp.OUT)  
-pwm=gp.PWM(21,50)  
+gp.setup(23,gp.OUT)  
+pwm=gp.PWM(23,50)  
 pwm.start(0)  
 
 def on_connect(client, userdata, flags, rc):
