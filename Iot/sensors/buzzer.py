@@ -47,9 +47,24 @@ def on_message(client, userdata, msg):
 		toggle = False
 	else:
 		buzzer.on()
-		GPIO.output(LED_1,GPIO.HIGH)
-		GPIO.output(LED_2,GPIO.HIGH)
 		toggle = True
+		while True:
+			# set GPIO14 pin to HIGH
+			GPIO.output(LED_1,GPIO.HIGH)
+			GPIO.output(LED_2,GPIO.HIGH)
+			# show message to Terminal
+			print("LED is ON")
+			# pause for one second
+			time.sleep(0.3)
+
+
+			# set GPIO14 pin to HIGH
+			GPIO.output(LED_1,GPIO.LOW)
+			GPIO.output(LED_2,GPIO.LOW)
+			# show message to Terminal
+			print("LED is OFF")
+			# pause for one second
+			time.sleep(0.3)
 
 client = mqtt.Client()
 client.on_connect = on_connect
