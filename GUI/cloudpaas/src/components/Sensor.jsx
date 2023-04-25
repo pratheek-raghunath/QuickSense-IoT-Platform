@@ -1,3 +1,5 @@
+import Popup from "reactjs-popup";
+
 const Sensor = () => {
   //navigate to dashboard automatically if auth token is present in local storage
 
@@ -7,12 +9,18 @@ const Sensor = () => {
         Sensors
       </h1>
 
-      <button
-        type="button"
-        class=" float-right rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      <Popup
+        trigger={
+          <button
+            id="btn-sensor"
+            class=" float-right rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800   focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Add Sensor
+          </button>
+        }
       >
-        Add Sensor
-      </button>
+        <div className="text-white">Pop up content</div>
+      </Popup>
     </div>
   );
 };
