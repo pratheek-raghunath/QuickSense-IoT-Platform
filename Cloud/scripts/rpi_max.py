@@ -20,12 +20,13 @@ while True:
         "sensor": "rpi",
         "user_id": USER_ID,
         "data": {
-            "cpu_temperature": psutil.sensors_temperatures()['thinkpad'][0].current,
+            "cpu_temperature": psutil.sensors_temperatures()['dell_smm'][0].current,
             "memory_usage": psutil.virtual_memory()[2],
             "cpu_usage": psutil.cpu_percent()
         },
         "timestamp": str(datetime.datetime.now(IST))
     }
     print(data)
-    (rc, mid) = client.publish(f'/{USER_ID}/data_stream/rpi', json.dumps(data), qos=1)
+    (rc, mid) = client.publish(
+        f'/{USER_ID}/data_stream/rpi', json.dumps(data), qos=1)
     time.sleep(3)
