@@ -4,21 +4,34 @@ import {
     Ripple,
     initTE,
 } from "tw-elements";
+import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 initTE({ Input, Ripple });
 function Login2() {
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target.email.value)
+        console.log(event.target.username.value)
+        console.log(event.target.password.value)
 
-        let email = event.target.email.value
+        let username = event.target.username.value
         let password = event.target.password.value
 
-        axios.post('http://api.orensaldanha.live/', {
-            email: 'Finn',
-            password: 'Williams'
-          });
+        axios.post('http://api.orensaldanha.live/auth/login', {
+            username: username,
+            password: password
+        })
+        .then(res => {
+            console.log(res.data)
+            localStorage.setItem("user", JSON.stringify(res.data));
+            return navigate("/dashboard/visualisation");
+        })
+        .catch(err => {
+            alert("Invalid username/password")
+            console.log(err)
+        })
     }
 
     return (
@@ -42,8 +55,8 @@ function Login2() {
                             </h1>
                             <form class="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
                                 <div>
-                                    <label for="email" class="block mb-2 text-sm font-medium  text-white">Your email</label>
-                                    <input type="email" name="email" id="email" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" />
+                                    <label for="username" class="block mb-2 text-sm font-medium  text-white">Your username</label>
+                                    <input type="username" name="username" id="username" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" />
                                 </div>
                                 <div>
                                     <label for="password" class="block mb-2 text-sm font-medium text-white">Password</label>
