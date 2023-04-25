@@ -7,6 +7,20 @@ import {
 
 initTE({ Input, Ripple });
 function Login2() {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(event.target.email.value)
+
+        let email = event.target.email.value
+        let password = event.target.password.value
+
+        axios.post('http://api.orensaldanha.live/', {
+            email: 'Finn',
+            password: 'Williams'
+          });
+    }
+
     return (
         <section class="h-screen bg-slate-950">
             <div class="container h-full px-6 m-auto lg:px-60 py-24 items-center justify-items-center">
@@ -26,14 +40,14 @@ function Login2() {
                             <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-white">
                                 Sign in to your account
                             </h1>
-                            <form class="space-y-4 md:space-y-6" action="#">
+                            <form class="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
                                 <div>
                                     <label for="email" class="block mb-2 text-sm font-medium  text-white">Your email</label>
-                                    <input type="email" name="email" id="email" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" />
+                                    <input type="email" name="email" id="email" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" />
                                 </div>
                                 <div>
                                     <label for="password" class="block mb-2 text-sm font-medium text-white">Password</label>
-                                    <input type="password" name="password" id="password" placeholder="••••••••" class=" border sm:text-sm rounded-lg block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" required="" />
+                                    <input type="password" name="password" id="password" placeholder="••••••••" class=" border sm:text-sm rounded-lg block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" required="" />
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-start">
