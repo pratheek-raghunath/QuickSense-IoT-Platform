@@ -17,23 +17,81 @@ const Popup = () => {
       <div className="   items-center rounded-lg    p-40 ">
         <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Pressure</div>
-          <div className=" text-right text-green-500">Running</div>
+          <div className="mr-7 text-right text-green-500">
+            Running
+            <div class="col-3">
+              <div class="snippet" data-title="dot-windmill">
+                <div class="stage">
+                  <div class="dot-windmill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Gas</div>
-          <div className=" text-right text-green-500">Running</div>
+          <div className=" mr-7 text-right text-green-500">
+            Running
+            <div class="col-3">
+              <div class="snippet" data-title="dot-windmill">
+                <div class="stage">
+                  <div class="dot-windmill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Temperature</div>
-          <div className=" text-right text-green-500">Running</div>
+          <div className=" mr-7 text-right text-green-500">
+            Running
+            <div class="col-3">
+              <div class="snippet" data-title="dot-windmill">
+                <div class="stage">
+                  <div class="dot-windmill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>IR</div>
-          <div className=" text-right text-green-500">Running</div>
+          <div className=" mr-7 text-right text-green-500">
+            Running
+            <div class="col-3">
+              <div class="snippet" data-title="dot-windmill">
+                <div class="stage">
+                  <div class="dot-windmill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Accelerometer</div>
-          <div className=" text-right text-green-500">Running</div>
+          <div className=" mr-7 text-right   text-green-500">
+            Running
+            <div class="col-3">
+              <div class="snippet" data-title="dot-windmill">
+                <div class="stage">
+                  <div class="dot-windmill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+          <div>Ultrasonic</div>
+          <div className=" mr-7 text-right text-green-500">
+            Running
+            <div class="col-3">
+              <div class="snippet" data-title="dot-windmill">
+                <div class="stage">
+                  <div class="dot-windmill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {showPopup && <MyPopup closePopup={closePopup} />}

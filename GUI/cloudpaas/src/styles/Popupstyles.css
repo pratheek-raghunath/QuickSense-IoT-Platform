@@ -43,3 +43,49 @@
   position: fixed;
   margin-left: 150px;
 }
+
+.dot-windmill {
+  position: relative;
+  top: -26px;
+  width: 10px;
+  height: 10px;
+  left: 90px;
+  border-radius: 5px;
+  background-color: #22c55e;
+  color: #22c55e;
+  transform-origin: 5px 15px;
+  animation: dot-windmill 2s infinite linear;
+}
+.dot-windmill::before,
+.dot-windmill::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+.dot-windmill::before {
+  left: -8.66254px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #22c55e;
+  color: #22c55e;
+}
+.dot-windmill::after {
+  left: 8.66254px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #22c55e;
+  color: #22c55e;
+}
+
+@keyframes dot-windmill {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(720deg) translate3d(0, 0, 0);
+  }
+}

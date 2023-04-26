@@ -49,6 +49,14 @@ const MyPopup = ({ closePopup }) => {
             <img id="plus" src="../../src/assets/plus.png" alt="plus" />
             {/* </a> */}
           </div>
+          <div class=" m-6 flex  rounded-lg bg-white px-6 py-6 font-bold text-black ">
+            <div className="flex flex-col items-center justify-center">
+              Ultrasonic
+            </div>
+            {/* <a onClick={}> */}
+            <img id="plus" src="../../src/assets/plus.png" alt="plus" />
+            {/* </a> */}
+          </div>
 
           {/* <button
             className="rounded bg-blue-700 px-2 py-2 font-bold text-white hover:bg-blue-700"
