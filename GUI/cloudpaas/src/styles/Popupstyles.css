@@ -9,5 +9,37 @@
 
 .modal-container {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 30rem;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  max-width: 30rem;
+}
+
+/* #model-btn {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #212121;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Work Sans", sans-serif;
+  transform: scale(0.9);
+} */
+
+#model-btn:hover {
+  background-color: #fff;
+  color: #212121;
+  border: #212121;
+}
+
+#plus {
+  height: 17px;
+  width: 17px;
+  position: fixed;
+  margin-left: 150px;
 }
