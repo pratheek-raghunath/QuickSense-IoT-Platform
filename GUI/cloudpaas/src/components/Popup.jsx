@@ -15,25 +15,25 @@ const Popup = () => {
         Add Sensors
       </button>
       <div className="   items-center rounded-lg    p-40 ">
-        <div class="m-6 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Pressure</div>
-          <div className=" text-right">Running</div>
+          <div className=" text-right text-green-500">Running</div>
         </div>
-        <div class="m-6 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Gas</div>
-          <div className=" text-right">Running</div>
+          <div className=" text-right text-green-500">Running</div>
         </div>
-        <div class="m-6 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Temperature</div>
-          <div className=" text-right">Running</div>
+          <div className=" text-right text-green-500">Running</div>
         </div>
-        <div class="m-6 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>IR</div>
-          <div className=" text-right">Running</div>
+          <div className=" text-right text-green-500">Running</div>
         </div>
-        <div class="m-6 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
           <div>Accelerometer</div>
-          <div className=" text-right">Running</div>
+          <div className=" text-right text-green-500">Running</div>
         </div>
       </div>
       {showPopup && <MyPopup closePopup={closePopup} />}
