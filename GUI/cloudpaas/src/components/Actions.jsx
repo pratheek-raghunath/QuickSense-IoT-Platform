@@ -40,10 +40,10 @@ const Actions = () => {
             </div>
           </div>
         </div>
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg  bg-black shadow-lg shadow-slate-100 ">
+        <div class="ml-52 mt-20 w-fit max-w-sm rounded-lg  bg-slate-100 shadow-lg shadow-slate-100 ">
           <div class="flex flex-col items-center ">
             <img
-              class=" w-50 h-64  object-fill  shadow-lg"
+              class=" h-64 w-fit   object-fill  shadow-lg"
               src="../../src/assets/buzzer.png"
               alt="Buzzer"
             />
@@ -72,11 +72,11 @@ const Actions = () => {
             </div>
           </div>
         </div>
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg  bg-black shadow-lg shadow-slate-100 ">
+        <div class="ml-52 mt-20 w-fit max-w-sm rounded-lg  bg-slate-100 shadow-lg shadow-slate-100 ">
           <div class="flex flex-col items-center ">
             <img
-              class=" w-50 h-64  object-fill  shadow-lg"
-              src="../../src/assets/buzzer.png"
+              class=" h-64 w-fit  object-fill  shadow-lg"
+              src="../../src/assets/doorr.png"
               alt="Buzzer"
             />
           </div>
@@ -104,11 +104,11 @@ const Actions = () => {
             </div>
           </div>
         </div>
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg  bg-black shadow-lg shadow-slate-100 ">
+        <div class="ml-52 mt-20 w-fit max-w-sm rounded-lg  bg-slate-100 shadow-lg shadow-slate-100 ">
           <div class="flex flex-col items-center ">
             <img
-              class=" w-50 h-64  object-fill  shadow-lg"
-              src="../../src/assets/buzzer.png"
+              class=" h-64 w-fit  object-fill  shadow-lg"
+              src="../../src/assets/doorr.png"
               alt="Buzzer"
             />
           </div>
@@ -136,11 +136,11 @@ const Actions = () => {
             </div>
           </div>
         </div>
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg  bg-black shadow-lg shadow-slate-100 ">
+        <div class="ml-52 mt-20 w-fit max-w-sm rounded-lg  bg-slate-100 shadow-lg shadow-slate-100 ">
           <div class="flex flex-col items-center ">
             <img
-              class=" w-50 h-64  object-fill  shadow-lg"
-              src="../../src/assets/buzzer.png"
+              class=" h-64 w-fit  object-fill  shadow-lg"
+              src="../../src/assets/ledd.png"
               alt="Buzzer"
             />
           </div>
@@ -168,11 +168,11 @@ const Actions = () => {
             </div>
           </div>
         </div>
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg  bg-black shadow-lg shadow-slate-100 ">
+        <div class="ml-52 mt-20 w-fit max-w-sm rounded-lg  bg-slate-100 shadow-lg shadow-slate-100 ">
           <div class="flex flex-col items-center ">
             <img
-              class=" w-50 h-64  object-fill  shadow-lg"
-              src="../../src/assets/buzzer.png"
+              class=" h-64 w-fit  object-fill  shadow-lg"
+              src="../../src/assets/ledd.png"
               alt="Buzzer"
             />
           </div>
@@ -200,12 +200,12 @@ const Actions = () => {
             </div>
           </div>
         </div>
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg  bg-black shadow-lg shadow-slate-100 ">
+        <div class="ml-52 mt-20 w-fit max-w-sm rounded-lg  bg-slate-100 shadow-lg shadow-slate-100 ">
           <div class="flex flex-col items-center ">
             <img
-              class=" w-50 h-64  object-fill  shadow-lg"
-              src="../../src/assets/buzzer.png"
-              alt="Buzzer"
+              class=" h-64 w-fit  object-fill  shadow-lg"
+              src="../../src/assets/danger.png"
+              alt="Terminate"
             />
           </div>
         </div>
