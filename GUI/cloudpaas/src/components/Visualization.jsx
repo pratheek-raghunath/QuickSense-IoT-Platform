@@ -6,7 +6,7 @@ import Gas from "./visualisation/Gas";
 const Visualization = () => {
   return (
     <div>
-      <h1 className=" mt-7 flex flex-col items-center text-4xl font-bold text-white">
+      <h1 className=" mt-9 flex flex-col items-center text-4xl font-bold text-white">
         Visualization
       </h1>
       <div className="flow-root ">

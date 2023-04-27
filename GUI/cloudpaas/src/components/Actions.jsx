@@ -15,11 +15,11 @@ const Actions = () => {
 
   return (
     <div>
-      <h1 class="mt-9 flex flex-col items-center text-3xl font-bold tracking-tight text-blue-700">
+      <h1 class="mt-9 flex flex-col items-center text-4xl font-bold tracking-tight text-white">
         Actions
       </h1>
       <div className="mx-10 mt-8 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-800 py-10 pl-10">
-        <div class="w-58 ml-30 mb-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-600 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="w-58 ml-30 mb-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border  px-10  py-10 shadow border-gray-700 bg-gray-100">
           <div class="flex w-fit flex-col items-center rounded-lg border border-gray-200 bg-gray-800 px-5 pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Buzzer
@@ -57,7 +57,7 @@ const Actions = () => {
             />
           </div>
         </div> */}
-        <div class="w-58 mb-20 ml-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-600 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="w-58 mb-20 ml-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-100 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex w-fit flex-col items-center rounded-lg border border-gray-200 bg-gray-800 px-5 pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Terminate
@@ -88,7 +88,7 @@ const Actions = () => {
         </div>
       </div>
       <div className="mx-10 mt-8 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-800 py-10 pl-10">
-        <div class="w-58 ml-30 mb-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-600 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="w-58 ml-30 mb-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-100 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex w-fit flex-col items-center rounded-lg border border-gray-200 bg-gray-800 px-5 pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Door1
@@ -126,7 +126,7 @@ const Actions = () => {
             />
           </div>
         </div> */}
-        <div class="w-58 mb-20 ml-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-600 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="w-58 mb-20 ml-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-100 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex w-fit flex-col items-center rounded-lg border border-gray-200 bg-gray-800 px-5 pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Door2
@@ -158,7 +158,7 @@ const Actions = () => {
       </div>
       {/* next section */}
       <div className="mx-10 mb-10 mt-8 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-800 py-10 pl-10">
-        <div class="w-58 ml-30 mb-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-600 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="w-58 ml-30 mb-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-100 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex w-fit flex-col items-center rounded-lg border border-gray-200 bg-gray-800 px-5 pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               LED1
@@ -188,7 +188,7 @@ const Actions = () => {
           />
         </div>
 
-        <div class="w-58 mb-20 ml-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-600 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="w-58 mb-20 ml-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-100 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex w-fit flex-col items-center rounded-lg border border-gray-200 bg-gray-800 px-5 pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               LED2

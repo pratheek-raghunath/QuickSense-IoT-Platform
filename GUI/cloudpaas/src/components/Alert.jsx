@@ -29,7 +29,7 @@ const Alert = () => {
     <div>
       <h1
         id="alert"
-        class="mt-9 flex flex-col items-center text-3xl font-bold tracking-tight text-blue-700"
+        class="mt-9 flex flex-col items-center text-4xl font-bold tracking-tight text-white"
       >
         Alerts
       </h1>
