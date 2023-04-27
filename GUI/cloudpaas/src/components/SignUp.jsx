@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -64,20 +66,20 @@ const SignUp = () => {
                             <form class="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
                                 <div>
                                     <label for="email" class="block mb-2 text-sm font-medium  text-white">Enter email</label>
-                                    <input type="email" name="email" id="email" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" />
+                                    <input type="email" name="email" id="email" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" />
                                 </div>
 
                                 <div>
                                     <label for="email" class="block mb-2 text-sm font-medium  text-white">Create username</label>
-                                    <input type="text" name="username" id="username" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="user_123" required="" />
+                                    <input type="text" name="username" id="username" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" placeholder="user_123" required="" />
                                 </div>
                                 <div>
                                     <label for="password" class="block mb-2 text-sm font-medium text-white">Password</label>
-                                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="••••••••" class=" border sm:text-sm rounded-lg block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" required="" />
+                                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="••••••••" class=" border sm:text-sm rounded-lg block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" required="" />
                                 </div>
                                 <div>
                                     <label for="password" class="block mb-2 text-sm font-medium text-white">Confirm Password</label>
-                                    <input type="password" name="password" id="password" placeholder="••••••••" class=" border sm:text-sm rounded-lg block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" required="" />
+                                    <input type="password" name="password" id="password" placeholder="••••••••" class=" border sm:text-sm rounded-lg block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500" required="" />
                                 </div>
                                 <br></br>
                                 {/* <div class="flex items-center justify-between">
