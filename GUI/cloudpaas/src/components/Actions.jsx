@@ -19,7 +19,7 @@ const Actions = () => {
         Actions
       </h1>
       <div className="grid grid-cols-2 gap-4">
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-gray-800 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex flex-col items-center pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Buzzer
@@ -53,7 +53,7 @@ const Actions = () => {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-gray-800 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex flex-col items-center pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Door 1
@@ -85,7 +85,7 @@ const Actions = () => {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-gray-800 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex flex-col items-center pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Door 2
@@ -117,7 +117,7 @@ const Actions = () => {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-gray-800 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex flex-col items-center pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               LED 1
@@ -149,7 +149,7 @@ const Actions = () => {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-gray-800 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex flex-col items-center pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               LED 2
@@ -181,7 +181,7 @@ const Actions = () => {
         </div>
       </div>
       <div className="mb-7 grid grid-cols-2 gap-4">
-        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="ml-52 mt-20 w-full max-w-sm rounded-lg border border-gray-200 bg-gray-800 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex flex-col items-center pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
               Terminate

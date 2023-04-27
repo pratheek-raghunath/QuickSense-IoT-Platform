@@ -39,7 +39,7 @@ const Microprocessor = () => {
       </h1>
       <div
         id="temp"
-        class=" max-h-fit max-w-fit rounded-lg bg-white p-6 shadow-lg shadow-slate-100  dark:bg-black"
+        class=" max-h-fit max-w-fit rounded-lg  bg-white p-6 shadow-lg shadow-slate-100  dark:bg-black"
       >
         <h5 class="mb-2 items-center justify-center text-xl  font-semibold leading-tight text-black ">
           CPU Temperature
