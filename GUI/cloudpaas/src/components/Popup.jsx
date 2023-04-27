@@ -15,7 +15,7 @@ const Popup = () => {
         Add Sensors
       </button>
       <div className="   items-center rounded-lg    p-40 ">
-        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-gray-800 px-10 py-6 font-bold text-white">
           <div>Pressure</div>
           <div className="mr-7 text-right text-green-500">
             Running
@@ -28,7 +28,7 @@ const Popup = () => {
             </div>
           </div>
         </div>
-        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-gray-800 px-10 py-6 font-bold text-white">
           <div>Gas</div>
           <div className=" mr-7 text-right text-green-500">
             Running
@@ -41,7 +41,7 @@ const Popup = () => {
             </div>
           </div>
         </div>
-        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-gray-800 px-10 py-6 font-bold text-white">
           <div>Temperature</div>
           <div className=" mr-7 text-right text-green-500">
             Running
@@ -54,7 +54,7 @@ const Popup = () => {
             </div>
           </div>
         </div>
-        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-gray-800 px-10 py-6 font-bold text-white">
           <div>IR</div>
           <div className=" mr-7 text-right text-green-500">
             Running
@@ -67,7 +67,7 @@ const Popup = () => {
             </div>
           </div>
         </div>
-        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-gray-800 px-10 py-6 font-bold text-white">
           <div>Accelerometer</div>
           <div className=" mr-7 text-right   text-green-500">
             Running
@@ -80,7 +80,7 @@ const Popup = () => {
             </div>
           </div>
         </div>
-        <div class="m-8 flex justify-between rounded-lg bg-white px-6 py-6 font-bold text-black">
+        <div class="m-8 flex justify-between rounded-lg bg-gray-800 px-10 py-6 font-bold text-white">
           <div>Ultrasonic</div>
           <div className=" mr-7 text-right text-green-500">
             Running
