@@ -14,7 +14,7 @@ function NavUser() {
   const navigate = useNavigate();
   const onLogout = () => {
     localStorage.removeItem("user");
-    return useNavigate("/");
+    return navigate("/");
   }
 
   return (
