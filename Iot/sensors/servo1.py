@@ -39,7 +39,7 @@ pwm.start(0)
 
 def on_connect(client, userdata, flags, rc):
     print(f"Connected with result code {rc}")
-    client.subscribe(f"/{USER_ID}/action/servo")
+    client.subscribe(f"/{USER_ID}/action/servo1")
 
 def on_message(client, userdata, msg):
    global toggle
@@ -62,26 +62,26 @@ client.on_connect = on_connect
 client.on_message = on_message
 client.connect(BROKER_URL, 1883)
 
-#client.loop_forever()
+client.loop_forever()
 
 client.loop_start()
 
-try:
-	while True:
-		if int(datetime.datetime.now().strftime("%S")) % 5 == 0:
-			data = {
-				"sensor": "servo",
-				"user_id": USER_ID,
-				"data": {
-					"status": "running"
-				},
-				"timestamp": str(datetime.datetime.now(IST))
-			}
-			print(data)
-			(rc, mid) = client.publish(f'/{USER_ID}/data_stream/servo', json.dumps(data), qos=1)
-		time.sleep(1)
-except:
-    print("Stopping mqtt loop")
-    client.loop_stop()
-    pwm.stop()  
-    gp.cleanup()  
+# try:
+# 	while True:
+# 		if int(datetime.datetime.now().strftime("%S")) % 5 == 0:
+# 			data = {
+# 				"sensor": "servo",
+# 				"user_id": USER_ID,
+# 				"data": {
+# 					"status": "running"
+# 				},
+# 				"timestamp": str(datetime.datetime.now(IST))
+# 			}
+# 			print(data)
+# 			(rc, mid) = client.publish(f'/{USER_ID}/data_stream/servo', json.dumps(data), qos=1)
+# 		time.sleep(1)
+# except:
+#     print("Stopping mqtt loop")
+#     client.loop_stop()
+#     pwm.stop()  
+#     gp.cleanup()  
