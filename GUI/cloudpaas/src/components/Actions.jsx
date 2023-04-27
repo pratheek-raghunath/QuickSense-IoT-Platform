@@ -1,6 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import userContext from "../context/userContext";
-
+import buzzerImage from "../images/Alerts/Raspberry_Pi_Pico_buzzer.webp";
+import alarm from "../images/Alerts/alarm.gif";
+import door from "../images/Alerts/door.gif";
+import led from "../images/Alerts/led3.gif";
 const Actions = () => {
   const { socket, user } = useContext(userContext);
 
@@ -43,8 +46,8 @@ const Actions = () => {
             </div>
           </div>
           <img
-            class="  ml-10 h-48 w-48 "
-            src="../../src/assets/buzzer.png"
+            class="rounded-xl  ml-10 h-56 w-48 "
+            src={buzzerImage}
             alt="Buzzer"
           />
         </div>
@@ -60,7 +63,7 @@ const Actions = () => {
         <div class="w-58 mb-20 ml-20 mt-20 grid  max-w-xl grid-cols-2 gap-4 rounded-lg border border-gray-200 bg-gray-100 px-10  py-10 shadow dark:border-gray-700 dark:bg-gray-800">
           <div class="flex w-fit flex-col items-center rounded-lg border border-gray-200 bg-gray-800 px-5 pb-10">
             <button class="mt-16 rounded bg-blue-700 px-20 py-2 font-bold text-white hover:bg-blue-700">
-              Terminate
+              Alarm
             </button>
             <div class=" mt-10  md:mt-10">
               {/* mt-10 flex space-x-3 md:mt-10 */}
@@ -81,8 +84,8 @@ const Actions = () => {
             </div>
           </div>
           <img
-            class="  ml-12 h-48 w-48"
-            src="../../src/assets/danger.png"
+            class="  ml-12 h-56 w-48"
+            src={alarm}
             alt="Danger"
           />
         </div>
@@ -112,8 +115,8 @@ const Actions = () => {
             </div>
           </div>
           <img
-            class="  ml-10 h-48 w-48"
-            src="../../src/assets/doorr.png"
+            class="  ml-10 h-56 w-48"
+            src={door}
             alt="Door1"
           />
         </div>
@@ -150,8 +153,8 @@ const Actions = () => {
             </div>
           </div>
           <img
-            class="  ml-10 h-48 w-48"
-            src="../../src/assets/doorr.png"
+            class="  ml-10 h-56 w-48"
+            src={door}
             alt="Door2"
           />
         </div>
@@ -182,8 +185,8 @@ const Actions = () => {
             </div>
           </div>
           <img
-            class="  ml-10 h-48 w-48 "
-            src="../../src/assets/ledd.png"
+            class="  ml-10 h-56 w-48 "
+            src={led}
             alt="LED1"
           />
         </div>
@@ -212,8 +215,8 @@ const Actions = () => {
             </div>
           </div>
           <img
-            class="  ml-10 h-48 w-48 "
-            src="../../src/assets/ledd.png"
+            class="  ml-10 h-56 w-48 "
+            src={led}
             alt="LED2"
           />
         </div>
