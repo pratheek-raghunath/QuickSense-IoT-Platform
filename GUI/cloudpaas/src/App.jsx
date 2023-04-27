@@ -15,6 +15,7 @@ import NavUser from "./NavUser";
 import Visualization from "./components/Visualization";
 import Sensor from "./components/Sensor";
 import Microprocessor from "./components/Microprocessor";
+import Developers from "./components/Developers";
 import Actions from "./components/Actions";
 initTE({ Carousel });
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/overview" element={<OverView />} />
             <Route path="/login" element={<Login2 />} />
             <Route path="/signUp" element={<SignUp />} />
+            <Route path="/developers" element={<Developers />} />
           </Route>
           <Route path="/dashboard" element={<AfterAuth />}>
             <Route path="alert" element={<Alert />} />
