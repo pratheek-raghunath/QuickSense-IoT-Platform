@@ -4,11 +4,19 @@ import {
   Routes,
   Route,
   NavLink,
+  useNavigate,
 } from "react-router-dom";
 import logo from "../src/images/logo.png"
 
 
+
 function NavUser() {
+  const navigate = useNavigate();
+  const onLogout = () => {
+    localStorage.removeItem("user");
+    return navigate("/");
+  }
+
   return (
     <nav class="border-b border-gray-200 bg-gray-900">
       <div class=" mx-auto flex flex-wrap items-center justify-between p-4">
@@ -22,58 +30,28 @@ function NavUser() {
           </span>
         </a>
         <div class="flex items-center md:order-2">
-          <button
-            type="button"
-            class="mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-600 md:mr-0"
-            id="user-menu-button"
-            aria-expanded="false"
-            data-dropdown-toggle="user-dropdown"
-            data-dropdown-placement="bottom"
-          >
-            <span class="sr-only">Open user menu</span>
-            <img
-              class="h-8 w-8 rounded-full border-2 border-white"
-              src="../src/images/avatar.png"
-              alt="user photo"
-            />
-          </button>
+          {/* <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown header <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button> */}
+          <button class="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" type="button" onClick={onLogout}>Log Out</button>
           {/* <!-- Dropdown menu --> */}
-          <div
-            class="z-50 my-4 hidden list-none divide-y divide-gray-600 rounded-lg bg-gray-700 text-base shadow"
-            id="user-dropdown"
-          >
-            <div class="px-4 py-3">
-              <span class="block text-sm  text-white">Quick Sense</span>
-              <span class="block truncate  text-sm text-gray-400">
-                quicksense@kullagang.com
-              </span>
+          <div id="dropdownInformation" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+              <div>Bonnie Green</div>
+              <div class="font-medium truncate">name@flowbite.com</div>
             </div>
-            <ul class="py-2" aria-labelledby="user-menu-button">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
               <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white"
-                >
-                  Dashboard
-                </a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white"
-                >
-                  Settings
-                </a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white"
-                >
-                  Sign out
-                </a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
               </li>
             </ul>
+            <div class="py-2">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+            </div>
           </div>
           <button
             data-collapse-toggle="mobile-menu-2"
