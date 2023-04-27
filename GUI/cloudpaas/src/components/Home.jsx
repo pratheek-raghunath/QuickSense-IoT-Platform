@@ -1,5 +1,14 @@
 import React from 'react';
 import Video from '../assets/vid2.mp4';
+import pic3 from "../images/pic3.jpg"
+import automotive from "../images/automotive.jpg"
+import healthcare2 from "../images/healthcare2.jpg"
+import industrial from "../images/industrial.png"
+import smartCity from "../images/smartCity.png"
+import logistics from "../images/logistics.png"
+import smartGrid2 from "../images/smartGrid2.jpg"
+
+
 function Home() {
     return (
         <div>
@@ -86,7 +95,7 @@ function Home() {
                 {/* <!--Card 1--> */}
                 <div class="rounded overflow-hidden shadow-lg bg-gray-700">
                     <div class="h-64 transform transition duration-500 hover:scale-110">
-                    <img class="w-full h-full object-cover" src="../../src/images/automotive.jpg" alt="Automotive" />
+                    <img class="w-full h-full object-cover" src={automotive} alt="Automotive" />
                     </div>
                     <div class="px-6 py-4">
                         <div class="font-bold text-2xl text-center text-white mb-2">Automotive</div>
@@ -97,7 +106,7 @@ function Home() {
                 {/* <!--Card 2--> */}
                 <div class="rounded overflow-hidden shadow-lg bg-gray-700">
                     <div class="h-64 transform transition duration-500 hover:scale-110">
-                    <img class="w-full h-full object-cover" src="../../src/images/healthcare2.jpg" alt="Health Care" />
+                    <img class="w-full h-full object-cover" src={healthcare2} alt="Health Care" />
                     </div>
                     <div class="px-6 py-4">
                         <div class="font-bold text-2xl text-center text-white mb-2">Health Care</div>
@@ -109,7 +118,7 @@ function Home() {
                 {/* <!--Card 3--> */}
                 <div class="rounded overflow-hidden shadow-lg bg-gray-700">
                     <div class="h-64 transform transition duration-500 hover:scale-110">
-                    <img class="w-full h-full object-cover" src="../../src/images/industrial.png" alt="Industrial" />
+                    <img class="w-full h-full object-cover" src={industrial} alt="Industrial" />
                     </div>
                     <div class="px-6 py-4">
                         <div class="font-bold text-2xl text-center text-white mb-2">Industrial</div>
@@ -121,7 +130,7 @@ function Home() {
                 {/* <!--Card 4--> */}
                 <div class="rounded overflow-hidden shadow-lg bg-gray-700">
                     <div class="h-64 transform transition duration-500 hover:scale-110">
-                    <img class="w-full h-full object-cover" src="../../src/images/smartCity.png" alt="Smart City" />
+                    <img class="w-full h-full object-cover" src={smartCity} alt="Smart City" />
                     </div>
                     <div class="px-6 py-4">
                         <div class="font-bold text-2xl text-center text-white mb-2">Smart City</div>
@@ -132,7 +141,7 @@ function Home() {
                 {/* <!--Card 5--> */}
                 <div class="rounded overflow-hidden shadow-lg bg-gray-700">
                     <div class="h-64 transform transition duration-500 hover:scale-110">
-                    <img class="w-full h-full object-cover" src="../../src/images/logistics.png" alt="Logistics" />
+                    <img class="w-full h-full object-cover" src={logistics} alt="Logistics" />
                     </div>
                     <div class="px-6 py-4">
                         <div class="font-bold text-2xl text-center text-white mb-2">Logistics</div>
@@ -144,7 +153,7 @@ function Home() {
                 {/* <!--Card 6--> */}
                 <div class="rounded overflow-hidden shadow-lg bg-gray-700">
                     <div class="h-64 transform transition duration-500 hover:scale-110">
-                    <img class="w-full h-full object-cover" src="../../src/images/smartGrid2.jpg" alt="Smart Grid" />
+                    <img class="w-full h-full object-cover" src={smartGrid2} alt="Smart Grid" />
                     </div>
                     <div class="px-6 py-4">
                         <div class="font-bold text-2xl text-center text-white mb-2">Smart Grid</div>

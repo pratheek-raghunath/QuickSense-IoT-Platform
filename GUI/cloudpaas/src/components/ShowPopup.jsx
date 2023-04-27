@@ -1,5 +1,7 @@
 import "../styles/Popupstyles.css";
 import { useEffect } from "react";
+import plus from "../assets/plus.png"
+
 const MyPopup = ({ closePopup }) => {
   useEffect(() => {
     document.body.style.overflowY = "hidden";
@@ -18,14 +20,14 @@ const MyPopup = ({ closePopup }) => {
               Accelerometer
             </div>
             {/* <a onClick={}> */}
-            <img id="plus" src="../../src/assets/plus.png" alt="plus" />
+            <img id="plus" src={plus} alt="plus" />
             {/* </a> */}
           </div>
 
           <div class=" m-6 flex  rounded-lg bg-white px-6 py-6 font-bold text-black ">
             <div className="flex flex-col items-center justify-center">Gas</div>
             {/* <a onClick={}> */}
-            <img id="plus" src="../../src/assets/plus.png" alt="plus" />
+            <img id="plus" src={plus} alt="plus" />
             {/* </a> */}
           </div>
           <div class=" m-6 flex  rounded-lg bg-white px-6 py-6 font-bold text-black ">
@@ -36,7 +38,7 @@ const MyPopup = ({ closePopup }) => {
             <img
               id="plus"
               //   className="mb-4 ml-60 h-4 w-4"
-              src="../../src/assets/plus.png"
+              src={plus}
               alt="plus"
             />
             {/* </a> */}
@@ -46,7 +48,7 @@ const MyPopup = ({ closePopup }) => {
               Temperature
             </div>
             {/* <a onClick={}> */}
-            <img id="plus" src="../../src/assets/plus.png" alt="plus" />
+            <img id="plus" src={plus} alt="plus" />
             {/* </a> */}
           </div>
           <div class=" m-6 flex  rounded-lg bg-white px-6 py-6 font-bold text-black ">
@@ -54,7 +56,7 @@ const MyPopup = ({ closePopup }) => {
               Ultrasonic
             </div>
             {/* <a onClick={}> */}
-            <img id="plus" src="../../src/assets/plus.png" alt="plus" />
+            <img id="plus" src={plus} alt="plus" />
             {/* </a> */}
           </div>
 

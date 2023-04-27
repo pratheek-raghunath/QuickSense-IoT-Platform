@@ -1,5 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import userContext from "../context/userContext";
+import buzzer from "../assets/buzzer.png"
+import door from "../assets/doorr.png"
+import led from "../assets/ledd.png"
+import danger from "../assets/danger.png"
 
 const Actions = () => {
   const { socket, user } = useContext(userContext);
@@ -63,7 +67,7 @@ const Actions = () => {
           <div class="flex flex-col items-center ">
             <img
               class=" h-64 w-fit   object-fill  shadow-lg"
-              src="../../src/assets/buzzer.png"
+              src={buzzer}
               alt="Buzzer"
             />
           </div>
@@ -96,7 +100,7 @@ const Actions = () => {
           <div class="flex flex-col items-center ">
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
-              src="../../src/assets/doorr.png"
+              src={door}
               alt="Door"
             />
           </div>
@@ -129,7 +133,7 @@ const Actions = () => {
           <div class="flex flex-col items-center ">
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
-              src="../../src/assets/doorr.png"
+              src={door}
               alt="Door"
             />
           </div>
@@ -162,7 +166,7 @@ const Actions = () => {
           <div class="flex flex-col items-center ">
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
-              src="../../src/assets/ledd.png"
+              src={led}
               alt="LED"
             />
           </div>
@@ -195,7 +199,7 @@ const Actions = () => {
           <div class="flex flex-col items-center ">
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
-              src="../../src/assets/ledd.png"
+              src={led}
               alt="LED"
             />
           </div>
@@ -227,7 +231,7 @@ const Actions = () => {
           <div class="flex flex-col items-center ">
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
-              src="../../src/assets/danger.png"
+              src={danger}
               alt="Terminate"
             />
           </div>

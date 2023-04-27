@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
+import signup from "../images/SignUp.png"
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -52,7 +53,7 @@ const SignUp = () => {
                             <h1 class="text-4xl font-bold leading-tight tracking-tight  md:text-5xl text-white">Sign Up here</h1>
                         </div> */}
                         <img
-                            src="../../src/images/SignUp.png"
+                            src={signup}
                             class="w-full "
                             alt="Sign Up Image" />
                     </div>

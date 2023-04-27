@@ -5,6 +5,8 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
+import logo from "../src/images/logo.png"
+import avatar from "../src/images/avatar.png"
 
 function NavUser() {
   return (
@@ -14,7 +16,7 @@ function NavUser() {
           {/* https://cdn.pixabay.com/photo/2016/12/27/13/10/logo-1933884_960_720.png */}
           {/* https://cdn.pixabay.com/photo/2016/12/17/15/50/logo-1913689_960_720.png */}
           {/* https://img.freepik.com/free-vector/cloud-services-isometric-composition-with-icons-folders-cloud-box-with-sitting-people-vector-illustration_1284-65949.jpg?w=740&t=st=1681834536~exp=1681835136~hmac=3d4ba0cdab81c7dbf618117631975b296f4fdaca938c21f96d5ff53b014936ae */}
-          <img src="../src/images/logo.png" class="mr-3 h-8" alt="Our Logo" />
+          <img src={logo} class="mr-3 h-8" alt="Our Logo" />
           <span class="self-center whitespace-nowrap text-2xl font-semibold text-white">
             Kulla Gang
           </span>
@@ -31,7 +33,7 @@ function NavUser() {
             <span class="sr-only">Open user menu</span>
             <img
               class="h-8 w-8 rounded-full border-2 border-white"
-              src="../src/images/avatar.png"
+              src={avatar}
               alt="user photo"
             />
           </button>

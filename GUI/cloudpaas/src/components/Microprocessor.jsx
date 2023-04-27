@@ -1,6 +1,9 @@
 import "../styles/Microprocessorstyles.css";
 import { useContext, useState, useEffect } from "react";
 import userContext from "../context/userContext";
+import rpi from "../assets/Rpi.png"
+import thermometer from "../assets/thermometer.png"
+import mermory from "../assets/memory.png"
 
 const Microprocessor = () => {
   const { socket, user } = useContext(userContext);
@@ -35,7 +38,7 @@ const Microprocessor = () => {
     <div>
       <h1 class="mt-9 flex flex-col items-center text-3xl font-bold tracking-tight text-blue-700">
         Microprocessor
-        <img src="../../src/assets/Rpi.png" className="Rpi-logo" alt="Rpi" />
+        <img src={rpi} className="Rpi-logo" alt="Rpi" />
       </h1>
       <div
         id="temp"
@@ -47,7 +50,7 @@ const Microprocessor = () => {
         <p class="mb-4 font-semibold text-black ">
           {stats.cpu_temperature}ºc
           <img
-            src="../../src/assets/thermometer.png"
+            src={thermometer}
             className="thermo"
             alt="thermometer"
           />
@@ -63,7 +66,7 @@ const Microprocessor = () => {
         <p class="mb-4 font-semibold text-black">
           {stats.memory_usage}%
           <img
-            src="../../src/assets/memory.png"
+            src={memory}
             className="memory"
             alt="memoryusage"
           />
@@ -79,7 +82,7 @@ const Microprocessor = () => {
         <p class="mb-4 font-semibold text-black">
           {stats.cpu_usage}%
           <img
-            src="../../src/assets/memory.png"
+            src={memory}
             className="memory"
             alt="memoryusage"
           />

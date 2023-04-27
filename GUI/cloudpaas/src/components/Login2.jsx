@@ -6,6 +6,8 @@ import {
 } from "tw-elements";
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
+import Saly1 from "../images/Saly1.png"
+
 
 initTE({ Input, Ripple });
 function Login2() {
@@ -42,7 +44,7 @@ function Login2() {
                     {/* <!-- Left column container with background--> */}
                     <div class="mb-12 md:mb-0 md:w-8/12 lg:w-6/12 hidden lg:block xl:block">
                         <img
-                            src="../../src/images/Saly1.png"
+                            src={Saly1}
                             class="w-full"
                             alt="Phone image" />
                     </div>
