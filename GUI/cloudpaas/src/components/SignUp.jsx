@@ -5,24 +5,27 @@ const SignUp = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target.username.value)
+        console.log(event.target.email.value)
         console.log(event.target.username.value)
         console.log(event.target.password.value)
 
+        let email = event.target.email.value
         let username = event.target.username.value
         let password = event.target.password.value
 
-        axios.post('http://api.orensaldanha.live/auth/login', {
+        axios.post('http://api.orensaldanha.live/users', {
             username: username,
+            email: email,
             password: password
         })
         .then(res => {
             console.log(res.data)
-            localStorage.setItem("user", JSON.stringify(res.data));
-            return navigate("/dashboard/visualisation");
+            alert("User signed up successfully")
+            return navigate("/login");
         })
         .catch(err => {
-            alert("Invalid username/password")
+            console.log(err)
+            alert("Signup failed")
             console.log(err)
         })
     }
