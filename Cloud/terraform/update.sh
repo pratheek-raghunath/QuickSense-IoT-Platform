@@ -1,5 +1,6 @@
 cd /Cloud-based-Paas-Iot-Management-Deployment/Cloud
 sudo docker-compose -f docker-compose.prod.yaml down
+sudo docker system prune -a
 sudo git pull
 sudo cp package.json worker.js schema.js worker
 sudo cp package.json wss.js schema.js wss
