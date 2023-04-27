@@ -8,7 +8,7 @@ import {
 
 function NavUser() {
   return (
-    <nav class=" border-gray-200 bg-gray-900">
+    <nav class="border-b border-gray-200 bg-gray-900">
       <div class=" mx-auto flex flex-wrap items-center justify-between p-4">
         <a href="http://orensaldanha.live" class="flex items-center">
           {/* https://cdn.pixabay.com/photo/2016/12/27/13/10/logo-1933884_960_720.png */}
