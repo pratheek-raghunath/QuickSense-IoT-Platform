@@ -10,18 +10,23 @@ const Actions = () => {
   };
 
   const onDoor1 = () => {
+    console.log("servo1");
     socket.emit(`/${user.user_id}/action/servo1`, "toggle");
   };
 
   const onDoor2 = () => {
+    console.log("servo2");
+
     socket.emit(`/${user.user_id}/action/servo1`, "toggle");
   };
 
   const onLed1 = () => {
+    console.log("led1");
     socket.emit(`/${user.user_id}/action/led1`, "toggle");
   };
 
   const onLed2 = () => {
+    console.log("led2");
     socket.emit(`/${user.user_id}/action/led2`, "toggle");
   };
 
@@ -72,7 +77,7 @@ const Actions = () => {
             </button>
             <div class=" mt-10 flex space-x-3 md:mt-10">
               <a
-                onClick={onBuzzer}
+                onClick={onDoor1}
                 href="#"
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
@@ -105,6 +110,7 @@ const Actions = () => {
             </button>
             <div class=" mt-10 flex space-x-3 md:mt-10">
               <a
+                onClick={onDoor2}
                 href="#"
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
@@ -137,6 +143,7 @@ const Actions = () => {
             </button>
             <div class=" mt-10 flex space-x-3 md:mt-10">
               <a
+                onClick={onLed1}
                 href="#"
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
@@ -169,6 +176,7 @@ const Actions = () => {
             </button>
             <div class=" mt-10 flex space-x-3 md:mt-10">
               <a
+                onClick={onLed2}
                 href="#"
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >

@@ -19,7 +19,7 @@ function Login2() {
         let username = event.target.username.value
         let password = event.target.password.value
 
-        axios.post('http://api.orensaldanha.live/auth/login', {
+        axios.post('http://api.quicksense.live/auth/login', {
             username: username,
             password: password
         })

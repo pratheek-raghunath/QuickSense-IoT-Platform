@@ -15,7 +15,7 @@ const SignUp = () => {
         let username = event.target.username.value
         let password = event.target.password.value
 
-        axios.post('http://api.orensaldanha.live/users', {
+        axios.post('http://api.quicksense.live/users', {
             username: username,
             email: email,
             password: password

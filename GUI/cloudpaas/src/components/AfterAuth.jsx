@@ -30,7 +30,7 @@ const AfterAuth = () => {
       return navigate("/login");
     }
 
-    const socket = io("http://wss.orensaldanha.live", {
+    const socket = io("http://wss.quicksense.live", {
       query: {
         user_id: user_data.user_id,
       },
