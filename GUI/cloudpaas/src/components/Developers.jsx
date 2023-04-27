@@ -1,7 +1,7 @@
 import React from 'react';
 import oren from "../images/oren.jpg"
-import max from "../images/oren.jpg"
-import oren from "../images/oren.jpg"
+import max from "../images/max.jpg"
+import pratheek from "../images/Pratheek_R.jpg"
 
 function Developers() {
     return (
@@ -14,7 +14,7 @@ function Developers() {
                     </div>
                     <div class="grid gap-4 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
                         <div class="text-center text-gray-400">
-                            <img class="mx-auto mb-4 w-60 h-60 rounded-full" src="../../src/images/oren.jpg" alt="Oren Saldanha" />
+                            <img class="mx-auto mb-4 w-60 h-60 rounded-full" src={oren} alt="Oren Saldanha" />
                             <h3 class="mb-1 text-2xl font-bold tracking-tight text-white">
                                 <a href="#">Oren Saldanha</a>
                             </h3>
@@ -46,7 +46,7 @@ function Developers() {
                             </ul>
                         </div>
                         <div class="text-center text-gray-400">
-                            <img class="mx-auto mb-4 w-60 h-60 rounded-full" src="../../src/images/Pratheek R.jpg" alt="Pratheek R" />
+                            <img class="mx-auto mb-4 w-60 h-60 rounded-full" src={pratheek} alt="Pratheek R" />
                             <h3 class="mb-1 text-2xl font-bold tracking-tight text-white">
                                 <a href="#">Pratheek R</a>
                             </h3>
@@ -78,7 +78,7 @@ function Developers() {
                             </ul>
                         </div>
                         <div class="text-center text-gray-400">
-                            <img class="mx-auto mb-4 w-60 h-60 rounded-full" src="../../src/images/max.png" alt="Max Mario Dsouza" />
+                            <img class="mx-auto mb-4 w-60 h-60 rounded-full" src={max} alt="Max Mario Dsouza" />
                             <h3 class="mb-1 text-2xl font-bold tracking-tight text-white">
                                 <a href="#">Max Mario Dsouza</a>
                             </h3>
