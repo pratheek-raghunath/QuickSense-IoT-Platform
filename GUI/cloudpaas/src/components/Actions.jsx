@@ -79,7 +79,7 @@ const Actions = () => {
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
               src="../../src/assets/doorr.png"
-              alt="Buzzer"
+              alt="Door"
             />
           </div>
         </div>
@@ -111,7 +111,7 @@ const Actions = () => {
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
               src="../../src/assets/doorr.png"
-              alt="Buzzer"
+              alt="Door"
             />
           </div>
         </div>
@@ -143,7 +143,7 @@ const Actions = () => {
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
               src="../../src/assets/ledd.png"
-              alt="Buzzer"
+              alt="LED"
             />
           </div>
         </div>
@@ -175,7 +175,7 @@ const Actions = () => {
             <img
               class=" h-64 w-fit  object-fill  shadow-lg"
               src="../../src/assets/ledd.png"
-              alt="Buzzer"
+              alt="LED"
             />
           </div>
         </div>
