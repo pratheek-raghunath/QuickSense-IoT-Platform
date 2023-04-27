@@ -1,6 +1,32 @@
 import React from 'react';
 
 const SignUp = () => {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(event.target.username.value)
+        console.log(event.target.username.value)
+        console.log(event.target.password.value)
+
+        let username = event.target.username.value
+        let password = event.target.password.value
+
+        axios.post('http://api.orensaldanha.live/auth/login', {
+            username: username,
+            password: password
+        })
+        .then(res => {
+            console.log(res.data)
+            localStorage.setItem("user", JSON.stringify(res.data));
+            return navigate("/dashboard/visualisation");
+        })
+        .catch(err => {
+            alert("Invalid username/password")
+            console.log(err)
+        })
+    }
+
     return (
         <section class="h-screen bg-slate-950">
             <div class="container h-full px-6 m-auto lg:px-60 py-24 items-center justify-items-center">
@@ -32,7 +58,7 @@ const SignUp = () => {
                             <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-white">
                                 Create your account
                             </h1>
-                            <form class="space-y-4 md:space-y-6" action="#">
+                            <form class="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
                                 <div>
                                     <label for="email" class="block mb-2 text-sm font-medium  text-white">Enter email</label>
                                     <input type="email" name="email" id="email" class=" border sm:text-sm rounded-lg  block w-full p-2.5 bg-white border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" />
