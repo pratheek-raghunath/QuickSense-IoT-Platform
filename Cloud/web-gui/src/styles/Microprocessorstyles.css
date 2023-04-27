@@ -1,0 +1,40 @@
+.Rpi-logo {
+  height: 260px;
+  width: 260px;
+  margin-top: 60px;
+}
+
+#temp {
+  margin-top: -150px;
+  margin-bottom: 200px;
+  margin-right: 2px;
+  margin-left: 100px;
+}
+
+#memory {
+  margin-top: -320px;
+  margin-bottom: 200px;
+  margin-right: 100px;
+  margin-left: 2px;
+}
+
+#cpu {
+  margin-top: -50px;
+  margin-bottom: 200px;
+  margin-left: 685px;
+}
+
+.thermo {
+  height: 50px;
+  width: 50px;
+  float: right;
+  position: relative;
+  margin-right: 4%;
+}
+.memory {
+  height: 50px;
+  width: 50px;
+  float: right;
+  position: relative;
+  margin-right: 4%;
+}

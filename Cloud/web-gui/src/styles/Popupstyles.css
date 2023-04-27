@@ -1,0 +1,91 @@
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(189, 189, 189, 0.9);
+}
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 30rem;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  max-width: 30rem;
+}
+
+/* #model-btn {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #212121;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Work Sans", sans-serif;
+  transform: scale(0.9);
+} */
+
+#model-btn:hover {
+  background-color: #fff;
+  color: #212121;
+  border: #212121;
+}
+
+#plus {
+  height: 17px;
+  width: 17px;
+  position: fixed;
+  margin-left: 150px;
+}
+
+.dot-windmill {
+  position: relative;
+  top: -26px;
+  width: 10px;
+  height: 10px;
+  left: 90px;
+  border-radius: 5px;
+  background-color: #22c55e;
+  color: #22c55e;
+  transform-origin: 5px 15px;
+  animation: dot-windmill 2s infinite linear;
+}
+.dot-windmill::before,
+.dot-windmill::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+.dot-windmill::before {
+  left: -8.66254px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #22c55e;
+  color: #22c55e;
+}
+.dot-windmill::after {
+  left: 8.66254px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #22c55e;
+  color: #22c55e;
+}
+
+@keyframes dot-windmill {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(720deg) translate3d(0, 0, 0);
+  }
+}

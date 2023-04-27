@@ -14,13 +14,15 @@ sudo chmod +x /bin/docker-compose\
 
 #Clone repo
 #git clone https://orensaldanha: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@github.com/orensaldanha/cloud-temp
-sudo git clone https://pratheek-raghunath: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@github.com/pratheek-raghunath/Cloud-based-Paas-Iot-Management-Deployment
+#sudo git clone https://pratheek-raghunath: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@github.com/pratheek-raghunath/Cloud-based-Paas-Iot-Management-Deployment
+sudo git clone https://pratheek-raghunath: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@github.com/pratheek-raghunath/Cloud-based-Paas-Iot-Management-Deployment
 sudo git config --global --add safe.directory /Cloud-based-Paas-Iot-Management-Deployment
 
 #Install and setup nginx
 sudo apt install nginx -y
 sudo ufw allow 'Nginx HTTP'
 sudo mv /Cloud-based-Paas-Iot-Management-Deployment/Cloud/terraform/orensaldanha.live /etc/nginx/sites-enabled/orensaldanha.live
+sudo mv /Cloud-based-Paas-Iot-Management-Deployment/Cloud/terraform/quicksense.live /etc/nginx/sites-enabled/quicksense.live
 sudo systemctl restart nginx 
 
 #Install pip
@@ -39,6 +41,7 @@ sudo npm install
 sudo cp package.json worker.js schema.js worker
 sudo cp package.json wss.js schema.js wss
 sudo cp package.json api.js schema.js api
+sudo cp -r ../GUI/cloudpaas/. web-gui/
 
 sudo docker-compose -f docker-compose.prod.yaml up -d
 

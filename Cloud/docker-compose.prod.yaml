@@ -67,7 +67,7 @@ services:
       - api
       - wss
     ports:
-      - "3006:3006"
+      - "5173:5173"
     networks:
       - cloud-iot-paas
 
