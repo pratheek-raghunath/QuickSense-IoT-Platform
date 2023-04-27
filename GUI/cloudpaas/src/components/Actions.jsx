@@ -9,8 +9,20 @@ const Actions = () => {
     socket.emit(`/${user.user_id}/action/buzzer`, "toggle");
   };
 
-  const onOpenDoor = () => {
-    socket.emit(`/${user.user_id}/action/servo`, "toggle");
+  const onDoor1 = () => {
+    socket.emit(`/${user.user_id}/action/servo1`, "toggle");
+  };
+
+  const onDoor2 = () => {
+    socket.emit(`/${user.user_id}/action/servo1`, "toggle");
+  };
+
+  const onLed1 = () => {
+    socket.emit(`/${user.user_id}/action/led1`, "toggle");
+  };
+
+  const onLed2 = () => {
+    socket.emit(`/${user.user_id}/action/led2`, "toggle");
   };
 
   return (
@@ -60,6 +72,7 @@ const Actions = () => {
             </button>
             <div class=" mt-10 flex space-x-3 md:mt-10">
               <a
+                onClick={onBuzzer}
                 href="#"
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
