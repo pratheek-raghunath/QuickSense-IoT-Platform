@@ -67,7 +67,7 @@ services:
       - api
       - wss
     ports:
-      - "5173:5173"
+      - "4173:4173"
     networks:
       - cloud-iot-paas
 
