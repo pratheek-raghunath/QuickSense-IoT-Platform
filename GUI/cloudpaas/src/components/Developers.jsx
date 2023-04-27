@@ -1,4 +1,7 @@
 import React from 'react';
+import oren from "../images/oren.jpg"
+import max from "../images/oren.jpg"
+import oren from "../images/oren.jpg"
 
 function Developers() {
     return (

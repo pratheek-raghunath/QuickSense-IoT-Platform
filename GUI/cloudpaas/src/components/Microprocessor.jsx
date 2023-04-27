@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import userContext from "../context/userContext";
 import rpi from "../assets/Rpi.png"
 import thermometer from "../assets/thermometer.png"
-import mermory from "../assets/memory.png"
+import memory from "../assets/memory.png"
 
 const Microprocessor = () => {
   const { socket, user } = useContext(userContext);
