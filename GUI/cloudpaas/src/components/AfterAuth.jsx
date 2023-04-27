@@ -5,6 +5,12 @@ import NavUser from "../NavUser";
 import userContext from "../context/userContext";
 import { io } from "socket.io-client";
 
+
+const onLogout = () => {
+  localStorage.removeItem("user");
+  return navigate("/");
+}
+
 const AfterAuth = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
