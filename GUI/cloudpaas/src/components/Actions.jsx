@@ -1,9 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import userContext from "../context/userContext";
+
 import buzzerImage from "../images/Alerts/Raspberry_Pi_Pico_buzzer.webp";
 import alarm from "../images/Alerts/alarm.gif";
 import door from "../images/Alerts/door.gif";
 import led from "../images/Alerts/led3.gif";
+
 const Actions = () => {
   const { socket, user } = useContext(userContext);
 
@@ -12,8 +14,29 @@ const Actions = () => {
     socket.emit(`/${user.user_id}/action/buzzer`, "toggle");
   };
 
-  const onOpenDoor = () => {
-    socket.emit(`/${user.user_id}/action/servo`, "toggle");
+  const onAlarm = () => {
+    console.log("Alarm")
+    socket.emit(`/${user.user_id}/action/alarm`, "toggle");
+  };
+
+  const onDoor1 = () => {
+    console.log("door1");
+    socket.emit(`/${user.user_id}/action/servo1`, "toggle");
+  };
+
+  const onDoor2 = () => {
+    console.log("door2")
+    socket.emit(`/${user.user_id}/action/servo2`, "toggle");
+  };
+
+  const onLed1 = () => {
+    console.log("led1");
+    socket.emit(`/${user.user_id}/action/led1`, "toggle");
+  };
+
+  const onLed2 = () => {
+    console.log("led2")
+    socket.emit(`/${user.user_id}/action/led2`, "toggle");
   };
 
   return (
@@ -68,7 +91,7 @@ const Actions = () => {
             <div class=" mt-10  md:mt-10">
               {/* mt-10 flex space-x-3 md:mt-10 */}
               <a
-                onClick={onBuzzer}
+                onClick={onAlarm}
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 // mr-20
               >
@@ -99,7 +122,7 @@ const Actions = () => {
             <div class=" mt-10  md:mt-10">
               {/* mt-10 flex space-x-3 md:mt-10 */}
               <a
-                onClick={onBuzzer}
+                onClick={onDoor1}
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 // mr-20
               >
@@ -137,7 +160,7 @@ const Actions = () => {
             <div class=" mt-10  md:mt-10">
               {/* mt-10 flex space-x-3 md:mt-10 */}
               <a
-                onClick={onBuzzer}
+                onClick={onDoor2}
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 // mr-20
               >
@@ -169,7 +192,7 @@ const Actions = () => {
             <div class=" mt-10  md:mt-10">
               {/* mt-10 flex space-x-3 md:mt-10 */}
               <a
-                onClick={onBuzzer}
+                onClick={onLed1}
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 // mr-20
               >
@@ -199,7 +222,7 @@ const Actions = () => {
             <div class=" mt-10  md:mt-10">
               {/* mt-10 flex space-x-3 md:mt-10 */}
               <a
-                onClick={onBuzzer}
+                onClick={onLed2}
                 class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-12 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 // mr-20
               >
