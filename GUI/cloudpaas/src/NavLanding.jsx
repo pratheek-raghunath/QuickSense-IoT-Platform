@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Login from "./components/Login";
+import logo from "../src/images/logo.png"
 
 function NavLanding() {
-  return (
+
+    return (
     <nav class="border-b border-gray-200 bg-gray-900">
             <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="http://orensaldanha.live" class="flex items-center">
                     {/* https://cdn.pixabay.com/photo/2016/12/27/13/10/logo-1933884_960_720.png */}
                     {/* https://cdn.pixabay.com/photo/2016/12/17/15/50/logo-1913689_960_720.png */}
                     {/* https://img.freepik.com/free-vector/cloud-services-isometric-composition-with-icons-folders-cloud-box-with-sitting-people-vector-illustration_1284-65949.jpg?w=740&t=st=1681834536~exp=1681835136~hmac=3d4ba0cdab81c7dbf618117631975b296f4fdaca938c21f96d5ff53b014936ae */}
-                    <img src="../src/images/logo.png" class="h-8 mr-3" alt="Our Logo" />
+                    <img src={logo} class="h-8 mr-3" alt="Our Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Kulla Gang</span>
                 </a>
                 <div class="flex items-center md:order-2">
