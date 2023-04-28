@@ -58,16 +58,61 @@ io.on("connection", (socket) => {
         })
     })
 
-    socket.on(`/${user_id}/action/servo`, () => {
+    socket.on(`/${user_id}/action/servo1`, () => {
         data = {
                 action:"toggle"
         }
-        client.publish(`/${user_id}/action/servo`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+        client.publish(`/${user_id}/action/servo1`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
             if (error) {
               console.error(error)
             }
           })
         })
+
+    socket.on(`/${user_id}/action/servo2`, () => {
+        data = {
+                action:"toggle"
+        }
+        client.publish(`/${user_id}/action/servo2`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+            if (error) {
+                console.error(error)
+            }
+            })
+        })
+
+        socket.on(`/${user_id}/action/led1`, () => {
+            data = {
+                    action:"toggle"
+            }
+            client.publish(`/${user_id}/action/led1`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+                if (error) {
+                    console.error(error)
+                }
+                })
+            })
+
+
+            socket.on(`/${user_id}/action/led2`, () => {
+                data = {
+                        action:"toggle"
+                }
+                client.publish(`/${user_id}/action/led2`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+                    if (error) {
+                        console.error(error)
+                    }
+                    })
+                })
+
+                socket.on(`/${user_id}/action/alarm`, () => {
+                    data = {
+                            action:"toggle"
+                    }
+                    client.publish(`/${user_id}/action/alarm`, JSON.stringify(data), { qos: 0, retain: false }, (error) => {
+                        if (error) {
+                            console.error(error)
+                        }
+                        })
+                    })
 });
 
 
