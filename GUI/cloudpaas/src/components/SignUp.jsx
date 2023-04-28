@@ -42,7 +42,7 @@ const SignUp = () => {
                     {/* Left Side Text */}
                     <div class="items-center justify-center text-center -ml-4  mb-12 md:mb-0 md:w-8/12 lg:w-3/12 hidden lg:block xl:block">
 
-                        <h1 class="text-4xl mb-4 text-center font-bold leading-tight tracking-normal  md:text-5xl text-white">Sign Up to KullaGang</h1>
+                        <h1 class="text-4xl mb-4 text-center font-bold leading-tight tracking-normal  md:text-5xl text-white">Sign Up to Quick sense</h1>
                         <h5 class="text-md text-center leading-tight tracking-tight  md:text-3xl text-white">Already have an account?</h5>
                         <a href="/login" class="text-lg font-bold hover:underline text-blue-500">Login</a>
 
