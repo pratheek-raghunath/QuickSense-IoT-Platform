@@ -1,6 +1,6 @@
 import React from "react";
-import oren from "../images/oren.jpg";
-import max from "../images/maxx.jpg";
+import oren from "../images/orens.png";
+import max from "../images/maxxx.png";
 import pratheek from "../images/Pratheek_R.jpg";
 
 function Developers() {
