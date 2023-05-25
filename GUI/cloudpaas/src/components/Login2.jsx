@@ -40,7 +40,7 @@ function Login2() {
         <section class="h-screen bg-slate-950">
             <div class="container h-full px-6 m-auto lg:px-60 py-24 items-center justify-items-center">
                 <div
-                    class="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+                    class="g-6 flex h-full items-center justify-center lg:justify-between">
                     {/* <!-- Left column container with background--> */}
                     <div class="mb-12 md:mb-0 md:w-8/12 lg:w-6/12 hidden lg:block xl:block">
                         <img

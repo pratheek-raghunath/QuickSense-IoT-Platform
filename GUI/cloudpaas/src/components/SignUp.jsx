@@ -35,15 +35,15 @@ const SignUp = () => {
 
     return (
         <section class="h-screen bg-slate-950">
-            <div class="container h-full px-6 m-auto lg:px-60 py-24 items-center justify-items-center">
+            <div class="container h-full px-6 m-auto md:px-40 lg:px-60 py-24 items-center justify-items-center">
                 <div
-                    class="g-6 flex h-full flex-wrap items-center justify-center -mt-20">
+                    class="g-6 flex h-full  items-center justify-center -mt-20">
 
                     {/* Left Side Text */}
-                    <div class="items-center justify-center text-center -ml-4  mb-12 md:mb-0 md:w-8/12 lg:w-3/12 hidden lg:block xl:block">
+                    <div class="items-center justify-center text-center -ml-4  mb-12 md:mb-0 md:w-8/12 lg:w-4/12 hidden lg:block xl:block">
 
                         <h1 class="text-4xl mb-4 text-center font-bold leading-tight tracking-normal  md:text-5xl text-white">Sign Up to Quick sense</h1>
-                        <h5 class="text-md text-center leading-tight tracking-tight  md:text-3xl text-white">Already have an account?</h5>
+                        <h5 class="text-md text-center leading-relaxed mb-2 tracking-tight  md:text-3xl text-white">Already have an account?</h5>
                         <a href="/login" class="text-lg font-bold hover:underline text-blue-500">Login</a>
 
                     </div>
