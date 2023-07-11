@@ -1,22 +1,82 @@
-# Cloud-based-Paas-Iot-Management-Deployment
-<h1 align="center" id="title">IoT Platoform</h1>
-# Requirements
-docker
-docker-compose
-python 3.8.10
-NodeJS 16
-vscode:
-    restore-terminals extension
+<p><h1><img src="https://github.com/pratheek-raghunath/Cloud-Based-PaaS-A-Real-Time-Visualization-and-Managing-IoT-Deployments/blob/main/GUI/cloudpaas/src/assets/logo.png?raw=true" height="32" width="35" alt="react logo" />QuickSense - IoT Platform</h1></p>
 
-# Install
-docker-compose up -d
-pip install -r requirements.txt
-npm install
+ 
+The QuickSense project is a Cloud based PaaS for IoT Management & Deployment which gives a comprehensive solution that simplifies the management and deployment of Internet of Things (IoT) applications on a cloud-based Platform-as-a-Service (PaaS) environment. This project leverages various technologies and tools to provide a seamless end-to-end IoT platform.
 
-# View MongoDB database
-Install MongoDB compass - https://www.mongodb.com/docs/compass/master/install/
-MongoDb connection string - mongodb://root:example@localhost:27017/
 
-# Notes
-- Mongoose
-    Using mongoose 6.X instead of 7.X - better documentation and tutorials
+
+  
+
+## :pushpin:Features
+
+  
+
+- Customizable IoT Data Streams
+
+- MQTT and Worker Node Integration
+
+- Websockets to push the Data
+
+- IoT Data Visualizations
+
+- IoT Device Data Alerts
+
+- IoT Device Actions
+
+- Unique user based IoT Configuration
+
+  
+
+## 💻Tech Stack
+
+  
+
+**Client:** React, TailwindCSS
+
+  
+
+**Server:** Node, Express, GCP, Docker, MongoDB
+
+  
+
+**Microprocessor:** Raspberry Pi
+
+
+
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" height="40" alt="googlecloud logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="mongodb logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="40" alt="docker logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="40" alt="tailwindcss logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" height="40" alt="raspberrypi logo"  />
+</div>
+
+
+  
+
+## :crystal_ball:Architectural Diagram
+
+  
+
+###
+
+<img  src="https://github.com/pratheek-raghunath/Cloud-Based-PaaS-A-Real-Time-Visualization-and-Managing-IoT-Deployments/blob/main/Screenshots/Architectural%20Diagram%202.jpg?raw=true"  alt="architecture diagram"  width="300"  height="500"  />
+
+###
+## :page_facing_up:License
+### [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
+The GNU General Public License is a free, copyleft license for software and other kinds of works.
+![Static Badge](https://img.shields.io/badge/License-GPL%203.0-blue)
+
