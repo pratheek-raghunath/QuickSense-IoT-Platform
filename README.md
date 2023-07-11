@@ -78,5 +78,5 @@ The QuickSense project is a Cloud based PaaS for IoT Management & Deployment whi
 ## :page_facing_up:License
 ### [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 The GNU General Public License is a free, copyleft license for software and other kinds of works.
-![Static Badge](https://img.shields.io/badge/License-GPL%203.0-blue)
+## ![Static Badge](https://img.shields.io/badge/License-GPL%203.0-blue)
 
