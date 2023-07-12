@@ -4,15 +4,21 @@
 The QuickSense project is a Cloud based PaaS for IoT Management & Deployment which gives a comprehensive solution that simplifies the management and deployment of Internet of Things (IoT) applications on a cloud-based Platform-as-a-Service (PaaS) environment. This project leverages various technologies and tools to provide a seamless end-to-end IoT platform.
 
 
-##Table Of Contents
-  - [Features](#features)
-  - [Tech Stack](#tech_stack)
-  - [Architectural Diagram](#architectural_diagram)
-  - [License](#license)
-  - [Screenshots](#screenshots)
+## 📝Table Of Contents
+- [📝Table Of Contents](#table-of-contents)
+- [📌Features ](#features-)
+- [💻Tech Stack ](#tech-stack-)
+- [🔮Architectural Diagram ](#architectural-diagram-)
+  - [](#)
+  - [](#-1)
+- [📄License ](#license-)
+  - [GNU General Public License v3.0](#gnu-general-public-license-v30)
+- [](#-2)
+- [📷Screenshots ](#screenshots-)
+  - [Link to Screenshots](#link-to-screenshots)
   
 
-## :pushpin:Features <a name="features"></a>
+## 📌Features <a name="features"></a>
 
   
 
@@ -71,7 +77,7 @@ The QuickSense project is a Cloud based PaaS for IoT Management & Deployment whi
 
   
 
-## :crystal_ball:Architectural Diagram <a name="architectural_diagram"></a>
+## 🔮Architectural Diagram <a name="architectural_diagram"></a>
 
   
 
@@ -80,12 +86,12 @@ The QuickSense project is a Cloud based PaaS for IoT Management & Deployment whi
 <img  src="https://github.com/pratheek-raghunath/Cloud-Based-PaaS-A-Real-Time-Visualization-and-Managing-IoT-Deployments/blob/main/Screenshots/Architectural%20Diagram%202.jpg?raw=true"  alt="architecture diagram"  width="300"  height="500"  />
 
 ###
-## :page_facing_up:License <a name="license"></a>
+## 📄License <a name="license"></a>
 ### [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 The GNU General Public License is a free, copyleft license for software and other kinds of works.
 ## ![Static Badge](https://img.shields.io/badge/License-GPL%203.0-blue)
 
 
-## :camera:Screenshots <a name="screenshots"></a>
+## 📷Screenshots <a name="screenshots"></a>
 
-#### [Screenshots](https://github.com/pratheek-raghunath/QuickSense-IoT-Platform/tree/main/Screenshots)
+### [Link to Screenshots](https://github.com/pratheek-raghunath/QuickSense-IoT-Platform/tree/main/Screenshots)
