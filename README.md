@@ -7,7 +7,7 @@ The QuickSense project is a Cloud based PaaS for IoT Management & Deployment whi
 ## 📝Table Of Contents
 - [Features](#features-)
 - [Tech Stack](#tech-stack-)
-- [Architectural Diagram](#architectural-diagram)
+- [Architectural Diagram](#architectural-diagram-)
 - [License](#license)
 - [Screenshots](#screenshots-)
 
