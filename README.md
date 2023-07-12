@@ -1,13 +1,18 @@
-<p><h1><img src="https://github.com/pratheek-raghunath/Cloud-Based-PaaS-A-Real-Time-Visualization-and-Managing-IoT-Deployments/blob/main/GUI/cloudpaas/src/assets/logo.png?raw=true" height="32" width="35" alt="react logo" />QuickSense - IoT Platform</h1></p>
+<p><h1><img src="https://github.com/pratheek-raghunath/Cloud-Based-PaaS-A-Real-Time-Visualization-and-Managing-IoT-Deployments/blob/main/GUI/cloudpaas/src/assets/logo.png?raw=true" height="32" width="35" alt="react logo" />QuickSense - IoT Platform</h1></p><a name="about"></a>
 
  
 The QuickSense project is a Cloud based PaaS for IoT Management & Deployment which gives a comprehensive solution that simplifies the management and deployment of Internet of Things (IoT) applications on a cloud-based Platform-as-a-Service (PaaS) environment. This project leverages various technologies and tools to provide a seamless end-to-end IoT platform.
 
 
-
+##Table Of Contents
+  - [Features](#features)
+  - [Tech Stack](#techStack)
+  - [Architectural Diagram](#architecturalDiagram)
+  - [License](#license)
+  - [Screenshots](#screenshots)
   
 
-## :pushpin:Features
+## :pushpin:Features <a name="features"></a>
 
   
 
@@ -27,7 +32,7 @@ The QuickSense project is a Cloud based PaaS for IoT Management & Deployment whi
 
   
 
-## 💻Tech Stack
+## 💻Tech Stack <a name="techStack"></a>
 
   
 
@@ -66,7 +71,7 @@ The QuickSense project is a Cloud based PaaS for IoT Management & Deployment whi
 
   
 
-## :crystal_ball:Architectural Diagram
+## :crystal_ball:Architectural Diagram <a name="architecturalDiagram"></a>
 
   
 
@@ -75,8 +80,12 @@ The QuickSense project is a Cloud based PaaS for IoT Management & Deployment whi
 <img  src="https://github.com/pratheek-raghunath/Cloud-Based-PaaS-A-Real-Time-Visualization-and-Managing-IoT-Deployments/blob/main/Screenshots/Architectural%20Diagram%202.jpg?raw=true"  alt="architecture diagram"  width="300"  height="500"  />
 
 ###
-## :page_facing_up:License
+## :page_facing_up:License <a name="license"></a>
 ### [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 The GNU General Public License is a free, copyleft license for software and other kinds of works.
 ## ![Static Badge](https://img.shields.io/badge/License-GPL%203.0-blue)
 
+
+## :camera:Screenshots <a name="screenshots"></a>
+
+#### [Screenshots](https://github.com/pratheek-raghunath/QuickSense-IoT-Platform/tree/main/Screenshots)
